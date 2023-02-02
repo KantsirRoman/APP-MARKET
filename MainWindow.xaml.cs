@@ -33,12 +33,22 @@ namespace DB
             
 namespace APP
 {
-
     public partial class MainWindow : Window
     {
+        public static MainWindow WindowDrag;
         public MainWindow()
         {
             InitializeComponent();
+            WindowDrag = this;
+        }
+
+        private void Drag(object sender, RoutedEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                MainWindow.WindowDrag.DragMove();
+            }
+
         }
 
         private void Input(object sender, RoutedEventArgs e)
@@ -84,7 +94,7 @@ namespace APP
                 {
                     if (LoginR == user.name)
                     {
-                        statusTextR.Content = $"{user.name} Уже существует";
+                        statusTextR.Content = $"Акк {user.name} уже существует";
                         goodjob = false;
                         break;
                     }
@@ -110,11 +120,16 @@ namespace APP
             else
             { if (statusTextR.ToString() != "Пароль не совпадает")
                 {
-                    statusTextR.Content = "Пустые ячейки или юзур cуществует";
+                    statusTextR.Content = "Пустые поля";
                 }
             }
         }
 
+        private void ButtonClose(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+
+        }
     }
 }
 
