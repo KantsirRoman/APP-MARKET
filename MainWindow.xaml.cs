@@ -67,6 +67,7 @@ namespace APP
             if (TextLog.Text == user.name && TextPass.Password.ToString() == user.password)
             {
                 statusText.Content = user.name;
+                break;
             }
             else
             {
