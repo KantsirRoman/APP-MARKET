@@ -57,7 +57,7 @@ namespace APP
             }
             if (next)
             {
-                Window1 wnd2 = new Window1();
+                WorkingSpaceW wnd2 = new WorkingSpaceW();
                 wnd2.Owner = this;
                 this.Hide();
                 wnd2.ShowDialog();
