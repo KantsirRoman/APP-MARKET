@@ -167,9 +167,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MVVM\Model\InputDataClass.cs" />
-    <Compile Include="MVVM\Model\UserClass.cs" />
-    <Compile Include="WS.xaml.cs">
+    <Compile Include="Model\UserClass.cs" />
+    <Compile Include="View\WS.xaml.cs">
       <DependentUpon>WS.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -184,7 +183,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WS.xaml">
+    <Page Include="View\WS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,8 +224,7 @@
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.100.63\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\ViewModel\" />
-    <Folder Include="MVVM\View\" />
+    <Folder Include="ModelView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets')" />

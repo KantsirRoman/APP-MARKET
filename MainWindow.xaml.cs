@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using MyApp;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -9,7 +8,7 @@ using System.Windows.Navigation;
 using UserClass;
 
 
-namespace APP
+namespace MyApp
 {
     public partial class MainWindow : Window
     {

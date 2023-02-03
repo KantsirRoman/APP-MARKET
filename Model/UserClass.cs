@@ -1,11 +1,4 @@
 ﻿using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Xml.Linq;
 
 namespace UserClass
 {
@@ -16,12 +9,12 @@ namespace UserClass
         public string Email { get; set; }
         public string password { get; set; }
 
-    public User(string name,string Email, string password)
-    {
-        this.name = name;
-        this.Email = Email;
-        this.password = password;
-    }
+        public User(string name, string Email, string password)
+        {
+            this.name = name;
+            this.Email = Email;
+            this.password = password;
+        }
     }
 
 }
