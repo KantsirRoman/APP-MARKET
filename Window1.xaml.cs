@@ -19,6 +19,11 @@ namespace MyApp
     /// </summary>
     public partial class Window1 : Window
     {
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
         public Window1()
         {
             InitializeComponent();

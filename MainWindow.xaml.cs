@@ -1,36 +1,14 @@
-﻿using MyApp;
-using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using MyApp;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using MongoDB.Bson;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using MongoDB.Bson.Serialization;
-using MongoDB.Driver;
-
 using UserClass;
-using DB;
 
-namespace DB
-{
-    public class LoadDBinfo
-    {
-    }
-}
 
-            
 namespace APP
 {
     public partial class MainWindow : Window
@@ -40,6 +18,7 @@ namespace APP
         {
             InitializeComponent();
             WindowDrag = this;
+            Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
         }
 
         private void Drag(object sender, RoutedEventArgs e)
@@ -53,6 +32,7 @@ namespace APP
 
         private void Input(object sender, RoutedEventArgs e)
         {
+            bool next = false;
             List<User> UserDBRead()
             {
                 var client = new MongoClient("mongodb://localhost:27017");
@@ -67,12 +47,20 @@ namespace APP
             if (TextLog.Text == user.name && TextPass.Password.ToString() == user.password)
             {
                 statusText.Content = user.name;
+                next = true;
                 break;
             }
             else
             {
                 statusText.Content = "Wrong Password";
             }
+            }
+            if (next)
+            {
+                Window1 wnd2 = new Window1();
+                wnd2.Owner = this;
+                this.Hide();
+                wnd2.ShowDialog();
             }
         }
         
@@ -130,6 +118,15 @@ namespace APP
         {
             Application.Current.Shutdown();
 
+            /*Window1 wnd2 = new Window1();
+            wnd2.Owner = this;
+            this.Hide();
+            wnd2.ShowDialog();*/
+
+            /*MainWindow.Hide();
+            Window f2 = new Window1();
+            f2.ShowDialog();
+            fhis.Show();*/
         }
     }
 }
