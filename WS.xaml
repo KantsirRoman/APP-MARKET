@@ -37,16 +37,11 @@
                 </Viewbox>
             </Grid>
             <Grid Height="120">
-                <Viewbox>
-                    <Image Source="C:\Users\ADMIN\Desktop\MM.jpg">
-                    </Image>
-                </Viewbox>
+                <Viewbox/>
             </Grid>
         </StackPanel>
         <Grid Grid.Column="1">
-            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None">
-                <Image Source="C:\Users\ADMIN\Desktop\MM.jpg" Width="430"></Image>
-            </Viewbox>
+            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None"/>
         </Grid>
     </Grid>
 </Window>
