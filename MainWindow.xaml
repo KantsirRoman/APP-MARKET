@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:MyApp"
         mc:Ignorable="d"
         WindowStyle="None"
-    Title="" Height="527" Width="365" Background="Black" ResizeMode="NoResize">
+        Height="527" Width="365"
+        Title="" Background="Black" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp.View;
+using System;
 using System.Windows;
 
 namespace MyApp
@@ -13,6 +14,15 @@ namespace MyApp
         public WorkingSpaceW()
         {
             InitializeComponent();
+        }
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {   
+            frame.Navigate(new Home());
+        }
+
+        private void UserButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new User());
         }
     }
 }

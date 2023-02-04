@@ -8,12 +8,12 @@
         Height="500" Width="950"
         MinHeight="350" MinWidth="600"
         Background="LightBlue"
-        Title="NON">
-    <Grid>
+        Title="NON"
+        WindowStartupLocation="CenterScreen">
+    <Grid> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="150"/>
-            <ColumnDefinition Width ="780"/>
-            <ColumnDefinition MinWidth="20"/>
+            <ColumnDefinition Width ="*" MinWidth="800"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="Azure"  >
             <Grid Height="90" >
@@ -22,14 +22,12 @@
                 </Viewbox>
             </Grid>
             <Grid Height="50">
-                <Viewbox >
-                    <TextBlock>Календарь</TextBlock>
-                </Viewbox>
+                    <Button Content="Home" x:Name="HomeButton" Hyperlink.Click="HyperlinkButton_Click" FontSize="30"></Button>
+                  <!-- <TextBlock x:Name="pageTitle" Hyperlink.Click="HyperlinkButton_Click"><Hyperlink </TextBlock>
+                    <Button x:Name="pageTitle" Content="Home" Hyperlink.Click="HyperlinkButton_Click"></Button>-->
             </Grid>
             <Grid Height="50">
-                <Viewbox >
-                    <TextBlock>Календарь</TextBlock>
-                </Viewbox>
+                    <Button Content="User" x:Name="UserButton" Hyperlink.Click="UserButton_Click" FontSize="30" ></Button>
             </Grid>
             <Grid Height="50">
                 <Viewbox >
@@ -40,8 +38,6 @@
                 <Viewbox/>
             </Grid>
         </StackPanel>
-        <Grid Grid.Column="1">
-            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None"/>
-        </Grid>
+        <Frame Grid.Column="1" x:Name="frame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
