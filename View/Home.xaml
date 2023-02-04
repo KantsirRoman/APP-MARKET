@@ -8,7 +8,7 @@
       d:DesignHeight="500" d:DesignWidth="780"
       Title="Home">
 
-    <Grid Background="SaddleBrown">
-        
+    <Grid Background="#f1f3f5">
+        <TextBlock Text="PAGE 1" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold"/>
     </Grid>
 </Page>

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows;
-using MyApp;
+using System.Windows.Controls;
+using MyApp.View;
 
-namespace MyApp.View
+namespace MyApp
 {
     public partial class WorkingSpaceW : Window
     {
@@ -15,7 +16,7 @@ namespace MyApp.View
         {
             InitializeComponent();
         }
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        /*private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {   
             frame.Navigate(new Home());
         }
@@ -23,6 +24,15 @@ namespace MyApp.View
         private void UserButton_Click(object sender, RoutedEventArgs e)
         {
             frame.Navigate(new UserP());
+
+        }*/
+        private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            var selected = sidebar.SelectedItem as NavButton;
+
+            frame.Navigate(selected.Navlink);
+
         }
     }
 }
