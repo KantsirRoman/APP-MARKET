@@ -244,6 +244,10 @@
     <Resource Include="Images\img_transaction.png" />
     <Resource Include="Images\shutdown_def.png" />
     <Resource Include="Images\shutdown_mo.png" />
+    <Resource Include="Images\BookMark.png" />
+    <Resource Include="Images\Message.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\Home.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>
