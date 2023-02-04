@@ -18,9 +18,9 @@ namespace MyApp.View
     /// <summary>
     /// Логика взаимодействия для User.xaml
     /// </summary>
-    public partial class User : Page
+    public partial class UserP : Page
     {
-        public User()
+        public UserP()
         {
             InitializeComponent();
         }

@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Input;
 using UserClass;
 
+//folders
+using MyApp.View;
+
 
 namespace MyApp
 {

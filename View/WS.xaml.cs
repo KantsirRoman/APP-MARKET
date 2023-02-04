@@ -1,8 +1,8 @@
-﻿using MyApp.View;
-using System;
+﻿using System;
 using System.Windows;
+using MyApp;
 
-namespace MyApp
+namespace MyApp.View
 {
     public partial class WorkingSpaceW : Window
     {
@@ -22,7 +22,7 @@ namespace MyApp
 
         private void UserButton_Click(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new User());
+            frame.Navigate(new UserP());
         }
     }
 }
