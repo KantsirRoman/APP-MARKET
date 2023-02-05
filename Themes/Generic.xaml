@@ -4,17 +4,6 @@
     xmlns:local="clr-namespace:MyApp"
     xmlns:n="clr-namespace:MyApp.View">
 
-    <Style x:Key="xPB" TargetType="{x:Type PasswordBox}">
-        <Setter Property="PasswordChar" Value="+"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type PasswordBox}">
-                    <Border x:Name="border" CornerRadius="7">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
     <Style TargetType="{x:Type local:NavButton}">
 
