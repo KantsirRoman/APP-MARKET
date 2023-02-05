@@ -77,7 +77,7 @@ namespace MyApp
                 string PasswordR = TextPassR.Password.ToString();
                 string PasswordR2 = TextPassR2.Password.ToString();
 
-            if (LoginR != "" && Email != "" && PasswordR != "")
+            if (LoginR != "" && Email != "" && PasswordR != "" && Email.Contains("@gmail.com"))
             {
                 bool goodjob = false;
                 foreach (var user in usersdataR)
@@ -129,6 +129,8 @@ namespace MyApp
             f2.ShowDialog();
             fhis.Show();*/
         }
+
+       
     }
 }
 

@@ -9,7 +9,15 @@
       Title="Home">
 
     <Grid Background="#f1f3f5">
-        
-        <TextBlock Text="HELLO" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold"/>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="79"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="APP MARKET" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="378"/>
+        <StackPanel  Orientation="Horizontal" Grid.Row="1" Background="Transparent" HorizontalAlignment="Center">
+            <Viewbox Stretch="Fill">
+                <Image Source="https://itc.ua/wp-content/uploads/2021/07/microsoft_store_windows_11_1.0.jpg" HorizontalAlignment="Center"></Image>
+            </Viewbox>
+        </StackPanel>
     </Grid>
 </Page>
