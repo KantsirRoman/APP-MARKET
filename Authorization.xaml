@@ -9,6 +9,7 @@
         Height="527" Width="365"
         Title="" Background="Black" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
+    
     <Grid Background="#FF444444" MouseDown="Drag">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
