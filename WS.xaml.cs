@@ -34,5 +34,6 @@ namespace MyApp
             frame.Navigate(selected.Navlink);
 
         }
+        
     }
 }
