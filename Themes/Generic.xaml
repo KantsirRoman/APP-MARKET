@@ -15,12 +15,12 @@
                     <Border x:Name="back" CornerRadius="8" Padding="{TemplateBinding Padding}" Background="Transparent" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
                             <!--<Path x:Name="icon" Height="50" Width="50" Stretch="Uniform" Fill="#7b8792" Data="{TemplateBinding Icon}"/>-->
-                            <Image Grid.Row="0" Source="{TemplateBinding Icon}" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                            <Image Grid.Row="0" Source="{TemplateBinding Icon}" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
                         </Grid>
                     </Border>
 
@@ -30,13 +30,15 @@
                         </Trigger>
 
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" TargetName="back" Value="#FFEDF37A"/>
+                            <Setter Property="Background" TargetName="back" Value="#FFE9ECEF"/>
                             
                         </Trigger>
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
+
             </Setter.Value>
         </Setter>
     </Style>
+    
 </ResourceDictionary>
