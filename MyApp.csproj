@@ -248,6 +248,9 @@
     <Resource Include="Images\Message.png" />
     <Resource Include="Images\Search.png" />
     <Resource Include="Images\Home.png" />
+    <Resource Include="Images\CloseButt.png" />
+    <Resource Include="Images\CloseButt2.png" />
+    <Resource Include="Images\UPD240.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>

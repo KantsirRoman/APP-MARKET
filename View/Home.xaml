@@ -9,6 +9,7 @@
       Title="Home">
 
     <Grid Background="#f1f3f5">
+        
         <TextBlock Text="HELLO" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold"/>
     </Grid>
 </Page>

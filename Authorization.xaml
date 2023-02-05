@@ -209,6 +209,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="X" HorizontalAlignment="Left" Margin="336,0,0,0" VerticalAlignment="Center" Width="20" Height="20" Click="ButtonClose"/>
+        <Button  Margin="335,0,0,0" VerticalAlignment="Center" Width="20" Height="20" Click="ButtonClose" Background="Transparent">
+            <Image Source="/Images/CloseButt2.png" Stretch="Fill"></Image>
+        </Button>
     </Grid>
 </Window>
