@@ -1,45 +1,47 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 // Класс (приложение)
 
 namespace MyApp.Class
 {
-    internal class Application : INotifyPropertyChanged
+    public class Application : INotifyPropertyChanged
     {
-
+        private string name;
+        private string about;
         public string Name
         {
-            get { return Name; }
+            get { return name; }
             set
             {
-                Name = value;
+                name = value;
                 OnPropertyChanged("Name");
                 /*if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Name"));*/
             }
         }
         public string About {
-            get { return About; }
+            get { return about; }
             set
             {
-                About = value;
+                about = value;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("About"));
             }
         }
         
         public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged(string PropertyName)
+        public void OnPropertyChanged([CallerMemberName] string PropertyName="")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
         }
-       public Application(string Name, string About) { 
+       /*public Application(string Name, string About) { 
             //this.idApp = idApp;
             this.Name = Name;
             this.About = About;
            // this.UrlApp = UrlApp;
-        }
+        }*/
 
 
     }

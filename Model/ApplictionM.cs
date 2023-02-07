@@ -17,7 +17,7 @@ namespace MyApp.Model
             set
             {
                 selectedApp = value;
-                OnPropertyChanged("SelectedPhone");
+                OnPropertyChanged("SelectedApp");
             }
         }
 
@@ -25,15 +25,16 @@ namespace MyApp.Model
         {
             ApplicationS = new ObservableCollection<Application>
             {
-                new Application { Name="123", About="123"},
+                new Application { Name="TikTok", About="China"},
+                new Application { Name="Instagram", About="USA"},
             };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-    public void OnPropertyChanged([CallerMemberName] string prop = "")
-    {
-        if (PropertyChanged != null)
-            PropertyChanged(this, new PropertyChangedEventArgs(prop));
-    }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }
