@@ -17,39 +17,25 @@
         </Grid.RowDefinitions>
         <TabControl Background="White" BorderBrush="White" Grid.Row="1" Height="500">
             <TabItem Header="Авторизація" Background="#FF444444" BorderBrush="#FF444444" Foreground="#FF24DADA" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Height="25" Width="180">
-                <Grid Margin="-3,0,-3,0" Height="475">
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="White"/>
-                            <GradientStop Color="#FF7B873B" Offset="1"/>
-                            <GradientStop Color="#FF1C222C" Offset="0.486"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
+                <Grid Margin="-3,0,-3,0" Height="475" Background="#FFBBBBBB">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="350"/>
                     </Grid.RowDefinitions>
-                    <TextBox Style="{DynamicResource TextBoxB}" x:Name="TextLog" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,80,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64" />
+                    <TextBox Style="{StaticResource MyTextBox}" x:Name="TextLog" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,80,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64" />
                     <PasswordBox Style="{StaticResource PasswordBoxB}" x:Name="TextPass" Height="30"  Grid.Row="1" VerticalAlignment="Top" Width="300" Margin="0,122,0,0" Background="#FF62819D" FontSize="18" MaxLength="32"/>
                     <Button Style="{DynamicResource ButtonB}" Content="Авторизація" Margin="0,181,0,0" Click="Input" Background="#FF4B953A" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Width="139" Height="30" VerticalAlignment="Top" Grid.Row="2"/>
                     <Label x:Name = "statusText" HorizontalAlignment = "Center" Margin = "0,220,0,0"  VerticalAlignment = "Center" Width = "170" Height = "35" Grid.Row="1" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
                 </Grid>
             </TabItem>
             <TabItem Header="Реєстрація" Foreground="#FF24DADA" Background="#FF444444" BorderBrush="#FF444444" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Height="25" Width="180">
-                <Grid Margin="-3,0,-3,0" Height="475">
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="White"/>
-                            <GradientStop Color="#FF7B873B" Offset="1"/>
-                            <GradientStop Color="#FF1C222C" Offset="0.486"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
+                <Grid Margin="-3,0,-3,0" Height="475" Background="#FFBBBBBB">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="350"/>
                     </Grid.RowDefinitions>
-                    <TextBox Style="{DynamicResource TextBoxB}" x:Name="TextLogR" HorizontalAlignment="Center" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,20,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64"/>
-                    <TextBox Style="{DynamicResource TextBoxB}" x:Name="TextEmail" HorizontalAlignment="Center" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,65,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64"/>
+                    <TextBox Style="{DynamicResource MyTextBox}" x:Name="TextLogR" HorizontalAlignment="Center" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,20,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64"/>
+                    <TextBox Style="{DynamicResource MyTextBox}" x:Name="TextEmail" HorizontalAlignment="Center" Height="30"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,65,0,0" Background="#FF62819D" FontSize="18" InputScope="Default" FontWeight="Bold" MaxLines="64"/>
                     <Viewbox HorizontalAlignment="Center" Height="110" Margin="0,115,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300">
                         <Grid Width="300">
                             <PasswordBox Style="{DynamicResource PasswordBoxB}" x:Name="TextPassR" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="300" Margin="0,20,0,0" Background="#FF62819D" FontSize="16"/>

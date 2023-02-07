@@ -255,6 +255,10 @@
     <Resource Include="Images\CloseButt.png" />
     <Resource Include="Images\CloseButt2.png" />
     <Resource Include="Images\UPD240.png" />
+    <Resource Include="Images\Atv.png" />
+    <Resource Include="Images\Gmail.png" />
+    <Resource Include="Images\inst.png" />
+    <Resource Include="Images\Tik.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>

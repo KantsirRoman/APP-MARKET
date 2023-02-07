@@ -14,7 +14,6 @@ namespace MyApp
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NavButton), new FrameworkPropertyMetadata(typeof(NavButton)));
         }
 
-
         public Uri Navlink
         {
             get { return (Uri)GetValue(NavlinkProperty); }
