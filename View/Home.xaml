@@ -10,7 +10,29 @@
       Title="Home">
     
     <Grid Background="#f1f3f5">
-        <Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="APP MARKET" FontFamily="ubuntu" HorizontalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="378" Grid.Column="1"/>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Left">
+            <ListBox x:Name="appList" SelectionChanged="appList_SelectionChanged" ItemsSource="{Binding Apps}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" Style="{StaticResource StackP}">
+                        <Image Width="100" Height="75" Source="{Binding Path=ImagePath}" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </Viewbox>
+        
+    </Grid>
+</Page>
+
+       <!-- <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
@@ -33,8 +55,10 @@
             <TextBlock Text="About" />
             <TextBox Text="{Binding About, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
-        <!-- Макет -->
-        <!--><Grid.RowDefinitions >
+        
+        Мій макет
+        
+        <Grid.RowDefinitions >
             <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -86,6 +110,5 @@
                     <TextBlock>123</TextBlock>
                 </StackPanel>
             </Viewbox>
-        </Grid>-->
-    </Grid>
-</Page>
+        </Grid>
+        -->

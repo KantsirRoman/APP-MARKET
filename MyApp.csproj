@@ -168,10 +168,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Class\Application.cs" />
-    <Compile Include="Model\ApplictionM.cs" />
+    <Compile Include="Class\AppC.cs" />
+    <Compile Include="Model\ApplictionM_old.cs" />
     <Compile Include="Class\UserClass.cs" />
+    <Compile Include="Model\AppM.cs" />
     <Compile Include="NavButton.cs" />
-    <Compile Include="ViewModel\ApplicationVM.cs" />
+    <Compile Include="ViewModel\ApplicationVM_old.cs" />
+    <Compile Include="ViewModel\AppVM.cs" />
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>

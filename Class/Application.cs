@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-// Класс (приложение)
+// Класс (приложение) не юзаем
 
 namespace MyApp.Class
 {

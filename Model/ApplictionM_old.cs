@@ -1,8 +1,7 @@
-﻿using System;
+﻿using MyApp.Class;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using MyApp.Class;
 
 namespace MyApp.Model
 {
