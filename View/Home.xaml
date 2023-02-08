@@ -33,7 +33,7 @@
             <TextBlock Text="About" />
             <TextBox Text="{Binding About, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
-<!-- Макет -->
+        <!-- Макет -->
         <!--><Grid.RowDefinitions >
             <RowDefinition Height="80"/>
             <RowDefinition/>
