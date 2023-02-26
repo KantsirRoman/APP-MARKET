@@ -8,55 +8,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="780"
       Title="Home">
-    
+    <!--<Page.Resources>
+        <ItemsPanelTemplate x:Key="listPanelTemplate">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+        </ItemsPanelTemplate>
+    </Page.Resources>
+    -->
     <Grid Background="#f1f3f5">
         <Grid.RowDefinitions >
             <RowDefinition Height="80"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="APP MARKET" FontFamily="ubuntu" HorizontalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="378" Grid.Column="1"/>
-        <Viewbox Grid.Row="1" HorizontalAlignment="Left">
-            <ListBox x:Name="appList" SelectionChanged="appList_SelectionChanged" ItemsSource="{Binding Apps}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="5" Style="{StaticResource StackP}">
-                        <Image Width="100" Height="75" Source="{Binding Path=ImagePath}" />
-                        <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        </Viewbox>
-        
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1" x:Name="appList" SelectionChanged="appList_SelectionChanged" ItemsSource="{Binding Apps}" HorizontalAlignment="Center" BorderBrush="Transparent" Background="Transparent">
+            <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+            </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <Grid Margin="20" Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="160"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Source="{Binding Path=ImagePath}" Margin="5" Stretch="UniformToFill" HorizontalAlignment="Center" Width="160"/>
+                        <TextBlock Grid.Row="1" Style="{StaticResource Text30}" Text="{Binding Path=Name}" HorizontalAlignment="Left" />
+                        <TextBlock Grid.Row="1" Style="{StaticResource Text30}" Text="{Binding Path=Company}" HorizontalAlignment="Right" />
+                    </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
 
-       <!-- <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.8*" />
-        </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" ItemsSource="{Binding ApplicationS}"
-                 SelectedItem="{Binding SelectedApp}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=Name}" />
-                        <TextBlock Text="{Binding Path=About}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <StackPanel Grid.Column="1" DataContext="{Binding SelectedApp}">
-            <TextBlock Text="Выбранный элемент"  />
-            <TextBlock Text="Name" />
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="About" />
-            <TextBox Text="{Binding About, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
-        
-        Мій макет
+    <!--Мій макет
         
         <Grid.RowDefinitions >
             <RowDefinition Height="80"/>
@@ -111,4 +100,5 @@
                 </StackPanel>
             </Viewbox>
         </Grid>
-        -->
+        
+        -->         

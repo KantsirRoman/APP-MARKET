@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace MyApp.ViewModel
 {
-    public class ApplicationViewModel : INotifyPropertyChanged
+    /*public class ApplicationViewModel : INotifyPropertyChanged
     {
         private Application application;
 
@@ -41,6 +41,6 @@ namespace MyApp.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-    }   
+    }  */ 
 } 
 

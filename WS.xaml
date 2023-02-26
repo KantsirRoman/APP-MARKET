@@ -19,7 +19,7 @@
             <local:NavButton Navlink="/View/Home.xaml" Margin="0,5,0,5"  Icon="/Images/Search.png"/>
             <local:NavButton Navlink="/View/Home.xaml" Margin="0,5,0,5"  Icon="/Images/BookMark.png"/>
             <local:NavButton Navlink="/View/UserP.xaml" Margin="0,5,0,5"  Icon="/Images/Message.png"/>
-            <local:NavButton Navlink="/View/UserP.xaml" Margin="0,150,0,5" Icon="/Images/UPD240.png"/>
+            <local:NavButton Navlink="/View/AddApp.xaml" Margin="0,150,0,5" Icon="/Images/UPD240.png"/>
         </ListBox>
 
         <Frame Grid.Column="1" x:Name="frame" NavigationUIVisibility="Hidden" Background="#e9ecef"/>

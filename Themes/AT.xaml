@@ -7,33 +7,31 @@
     <!--Головна сторінка Стак пенель-->
     <Style x:Key="StackP" TargetType="StackPanel">
         <Setter Property="Orientation" Value="Horizontal"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Background" Value="#FFC3F9F7"/>
-        <Setter Property="MinWidth" Value="250"/>
-        <Setter Property="MaxWidth" Value="350"/>
-        <Setter Property="MinHeight" Value="50"/>
-        <Setter Property="MaxHeight" Value="80"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="MinHeight" Value="80"/>
+        <Setter Property="MaxHeight" Value="90"/>
         <Style.Resources>
             <Style TargetType="Image">
-                <Setter Property="MinHeight" Value="20"/>
-                <Setter Property="MaxHeight" Value="130"/>
+                <Setter Property="MinHeight" Value="50"/>
+                <Setter Property="MaxHeight" Value="120"/>
 
             </Style>
         </Style.Resources>
     </Style>
     
-    <Style TargetType="TextBlock">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value ="Center"/>
+    <Style x:Key="Text30" TargetType="TextBlock">
         <Setter Property="FontSize" Value="30"/>
-        <Setter Property="Margin" Value="0,0,5,0"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
     </Style>
 
     <Style TargetType="Viewbox">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value ="Center"/>
         <Setter Property="Margin" Value="5,5,10,5"/>
         <Setter Property="StretchDirection" Value="DownOnly"/>
+        <Setter Property="MinHeight" Value="130"/>
     </Style>
 
     <!--Кольори виділення при наведенні текстових полів-->

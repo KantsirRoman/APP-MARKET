@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace MyApp.Model
 {
-    public class ApplicationViewModel : INotifyPropertyChanged
+    /*public class ApplicationViewModel : INotifyPropertyChanged
     {
         private Application selectedApp;
         public ObservableCollection<Application> ApplicationS { get; set; }
@@ -35,5 +35,5 @@ namespace MyApp.Model
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-    }
+    }*/
 }
