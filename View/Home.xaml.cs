@@ -11,7 +11,7 @@ namespace MyApp.View
     /// </summary>
     public partial class Home : Page
     {
-        public ObservableCollection<AppC> Apps { get; set; }
+        public ObservableCollection<AppModel> Apps { get; set; }
         public Home()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace MyApp.View
 
         private void appList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AppC p = (AppC)appList.SelectedItem;
+            AppModel p = (AppModel)appList.SelectedItem;
             MessageBox.Show(p.Name);
         }
     }

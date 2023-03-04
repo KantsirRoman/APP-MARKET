@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using MyApp.View;
 
 namespace MyApp
@@ -15,6 +16,11 @@ namespace MyApp
         public WorkingSpaceW()
         {
             InitializeComponent();
+            //frame.Navigate("/View/Home.xaml");
+
+            //frame.Navigate(@"{System.Windows.Controls.Frame: View/Home.xaml}".Navlink);
+            //frame.Navigate(@"MyAPP/View/Home.xaml");
+            // sidebar.SelectedItem as NavButton = "StartP";
         }
         /*private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {   

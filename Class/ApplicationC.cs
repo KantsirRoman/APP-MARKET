@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-// Класс (приложение) не юзаем
+
+// Класс (приложение) не юзаем (по факту VM)
 
 namespace MyApp.Class
 {
-    public class Application : INotifyPropertyChanged
+    public class ApplicationC : INotifyPropertyChanged
     {
         private string name;
         private string about;

@@ -1,20 +1,22 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MyApp.Class;
+using MyApp.Model;
+using MyApp.Repositories;
+//folders
+using System;
+using System.Net;
+using System.Security.Principal;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using UserClass;
-
-//folders
-using MyApp.View;
-
 
 namespace MyApp
 {
     public partial class MainWindow : Window
     {
         public static MainWindow WindowDrag;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +35,72 @@ namespace MyApp
 
         private void Input(object sender, RoutedEventArgs e)
         {
-            bool next = false;
+            string gmailUser = String.Format(TextLog.Text);
+            string passUser = TextPass.Password.ToString();
+
+            IUserRepository userRepository = new UserRepository();
+            var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(gmailUser, passUser));
+            if (isValidUser)
+            {
+                statusText.Content = "Вхід дозволено";
+                WorkingSpaceW wnd2 = new WorkingSpaceW();
+                wnd2.Owner = this;
+                this.Hide();
+                wnd2.ShowDialog();
+            }
+            else
+            {
+                statusText.Content = "Не вірні данні";
+            }
+        }
+
+        private void Input2(object sender, RoutedEventArgs e)
+        {
+            string gmailUser = String.Format(TextLog.Text);
+            string passUser = TextPass.Password.ToString();
+
+            /*if (DBconnector.InputCL(gmailUser, passUser))
+            {
+                statusText.Content = "Вхід дозволено";
+                WorkingSpaceW wnd2 = new WorkingSpaceW();
+                wnd2.Owner = this;
+                this.Hide();
+                wnd2.ShowDialog();
+            }
+            else
+            {
+                statusText.Content = "Не вірні данні";
+            }*/
+
+            /*MySqlConnection connection = new MySqlConnection(myConnectionString);
+            connection.Open();
+
+            //Створення запиту SQL Командами
+            string query = "select count(1) from User where Name=@user and Password = @password";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                //Вставка параметров 
+                cmd.Parameters.AddWithValue("@user", gmailUser);
+                cmd.Parameters.AddWithValue("@password", passUser);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    statusText.Content = "Success";
+                    connection.Close();
+                    
+                }
+                else
+                {
+                    statusText.Content = "NO";
+                }
+            }*/
+
+
+            //Вход MONGODB (json)
+
+            /*bool next = false;
             List<User> UserDBRead()
             {
                 var client = new MongoClient("mongodb://localhost:27017");
@@ -62,57 +129,111 @@ namespace MyApp
                 wnd2.Owner = this;
                 this.Hide();
                 wnd2.ShowDialog();
-            }
+            }*/
         }
-        
+
         private void CreatAcc(object sender, RoutedEventArgs e)
         {
-                var client = new MongoClient("mongodb://localhost:27017");
-                var database = client.GetDatabase("LoginApp");
-                IMongoCollection<User> collectionUsers = database.GetCollection<User>("Users");
-                List<User> usersdataR = collectionUsers.Find(new BsonDocument()).ToList();
-                
-                string LoginR = TextLogR.Text.ToString();
-                string Email = TextEmail.Text.ToString();
-                string PasswordR = TextPassR.Password.ToString();
-                string PasswordR2 = TextPassR2.Password.ToString();
+            string LoginR = TextLogR.Text.ToString();
+            string Email = TextEmail.Text.ToString();
+            string PasswordR = TextPassR.Password.ToString();
+            string PasswordR2 = TextPassR2.Password.ToString();
 
             if (LoginR != "" && Email != "" && PasswordR != "" && Email.Contains("@gmail.com"))
             {
-                bool goodjob = false;
-                foreach (var user in usersdataR)
+
+                if (PasswordR == PasswordR2)
                 {
-                    if (LoginR == user.name)
+                    UserModel NewUser = new UserModel(Email, PasswordR);
+                    IUserRepository userRepository = new UserRepository();
+                    switch (userRepository.Add(NewUser))
                     {
-                        statusTextR.Content = $"Акк {user.name} уже существует";
-                        goodjob = false;
-                        break;
+                        case 0:
+                            {
+                                statusTextR.Content = "Невідома помилка";
+                            }
+                            break;
+                        case 1:
+                            {
+                                statusTextR.Content = "Аккаунт створено";
+                            }
+                            break;
+                        case 2:
+                            {
+                                statusTextR.Content = "Аккаунт вже існує";
+                            }
+                            break;
+
+                        default:
+                            break;
                     }
-                    else
-                    {
-                        goodjob = true;
-                    }
-                }
-                if (goodjob)
-                {
-                    if (PasswordR == PasswordR2)
-                    {   
-                        User nuser = new User(LoginR, Email, PasswordR);
+                    /*User nuser = new User(LoginR, Email, PasswordR);
                         collectionUsers.InsertOne(nuser);
-                        statusTextR.Content = $"Аккаунт {LoginR} создан";
-                    }
-                    else
-                    {
-                        statusTextR.Content = "Пароль не совпадает";
-                    }
+                        statusTextR.Content = $"Аккаунт {LoginR} создан";*/
                 }
+                else
+                {
+                    statusTextR.Content = "Пароль не совпадает";
+                }
+
             }
             else
-            { if (statusTextR.ToString() != "Пароль не совпадает")
+            {
+                if (Email == "" || PasswordR == "")
                 {
                     statusTextR.Content = "Пустые поля";
                 }
+                else if (!Email.Contains("@gmail.com"))
+                {
+                    statusTextR.Content = "Не коректно введена пошта";
+                }
             }
+            /*var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("LoginApp");
+            IMongoCollection<User> collectionUsers = database.GetCollection<User>("Users");
+            List<User> usersdataR = collectionUsers.Find(new BsonDocument()).ToList();
+
+            string LoginR = TextLogR.Text.ToString();
+            string Email = TextEmail.Text.ToString();
+            string PasswordR = TextPassR.Password.ToString();
+            string PasswordR2 = TextPassR2.Password.ToString();
+
+        if (LoginR != "" && Email != "" && PasswordR != "" && Email.Contains("@gmail.com"))
+        {
+            bool goodjob = false;
+            foreach (var user in usersdataR)
+            {
+                if (LoginR == user.name)
+                {
+                    statusTextR.Content = $"Акк {user.name} уже существует";
+                    goodjob = false;
+                    break;
+                }
+                else
+                {
+                    goodjob = true;
+                }
+            }
+            if (goodjob)
+            {
+                if (PasswordR == PasswordR2)
+                {   
+                    User nuser = new User(LoginR, Email, PasswordR);
+                    collectionUsers.InsertOne(nuser);
+                    statusTextR.Content = $"Аккаунт {LoginR} создан";
+                }
+                else
+                {
+                    statusTextR.Content = "Пароль не совпадает";
+                }
+            }
+        }
+        else
+        { if (statusTextR.ToString() != "Пароль не совпадает")
+            {
+                statusTextR.Content = "Пустые поля";
+            }
+        }*/
         }
 
         private void ButtonClose(object sender, RoutedEventArgs e)
@@ -130,7 +251,7 @@ namespace MyApp
             fhis.Show();*/
         }
 
-       
+
     }
 }
 

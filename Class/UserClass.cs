@@ -1,8 +1,10 @@
 ﻿using MongoDB.Bson;
 
+
+//для создания листа после обработки Json mongo db
 namespace UserClass
 {
-    class User
+    /*class User
     {
         public ObjectId id { get; set; }
         public string name { get; set; }
@@ -15,6 +17,6 @@ namespace UserClass
             this.Email = Email;
             this.password = password;
         }
-    }
+    }*/
 
 }

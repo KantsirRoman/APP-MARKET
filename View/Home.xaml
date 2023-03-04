@@ -28,16 +28,16 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                     <DataTemplate>
-                    <Grid Margin="20" Width="200">
+                    <Grid Margin="10" Width="100" Height="140">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="160"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="15"/>
                         </Grid.RowDefinitions>
 
-                        <Image Grid.Row="0" Source="{Binding Path=ImagePath}" Margin="5" Stretch="UniformToFill" HorizontalAlignment="Center" Width="160"/>
+                        <Image Grid.Row="0" Source="{Binding Path=ImagePath}" Stretch="UniformToFill" HorizontalAlignment="Center" Width="80" Height="80"/>
                         <TextBlock Grid.Row="1" Style="{StaticResource Text30}" Text="{Binding Path=Name}" HorizontalAlignment="Left" />
-                        <TextBlock Grid.Row="1" Style="{StaticResource Text30}" Text="{Binding Path=Company}" HorizontalAlignment="Right" />
+                        <TextBlock Grid.Row="2" Text="{Binding Path=Company}" HorizontalAlignment="Left" />
                     </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

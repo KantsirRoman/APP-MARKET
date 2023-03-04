@@ -11,9 +11,9 @@ namespace MyApp.ViewModel
 {
     public class AppVM : INotifyPropertyChanged
     {
-        private AppC application;
+        private AppModel application;
 
-        public AppVM(AppC p)
+        public AppVM(AppModel p)
         {
             application = p;
         }
