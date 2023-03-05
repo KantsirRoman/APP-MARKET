@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MyApp.Class;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using MyApp.Class;
 
 namespace MyApp.ViewModel
 {
-    public class AppVM : INotifyPropertyChanged
+    public class AppVM_old : INotifyPropertyChanged
     {
         private AppModel application;
 
-        public AppVM(AppModel p)
+        public AppVM_old(AppModel p)
         {
             application = p;
         }

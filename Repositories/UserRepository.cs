@@ -1,11 +1,9 @@
 ﻿using MyApp.Model;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Net;
-using MySqlConnector;
-using Amazon.SecurityToken.Model;
 using System.Windows;
 
 namespace MyApp.Repositories

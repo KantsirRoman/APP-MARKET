@@ -15,7 +15,7 @@ namespace MyApp.View
         public Home()
         {
             InitializeComponent();
-            DataContext = new AppM();
+            DataContext = new AppViewModel();
         }
 
         private void appList_SelectionChanged(object sender, SelectionChangedEventArgs e)
