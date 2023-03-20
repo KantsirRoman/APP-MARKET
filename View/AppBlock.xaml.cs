@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MyApp.View
 {
     /// <summary>
-    /// Логика взаимодействия для User.xaml
+    /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
-    public partial class UserP : Page
+    public partial class AppBlock : UserControl
     {
-        public UserP()
+        public AppBlock()
         {
             InitializeComponent();
         }

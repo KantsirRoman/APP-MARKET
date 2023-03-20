@@ -36,9 +36,9 @@ namespace MyApp
         private void Input(object sender, RoutedEventArgs e)
         {
             //Загрузили фото в бд
-            /*IUploadPhoto UpPh = new UploadPhoto();
-            UpPh.SetUploadPhoto();
-*/
+           /* IUploadPhoto UpPh = new UploadPhoto();
+            UpPh.SetUploadPhoto("");*/
+
 
             string gmailUser = String.Format(TextLog.Text);
             string passUser = TextPass.Password.ToString();

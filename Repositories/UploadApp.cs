@@ -8,13 +8,13 @@ using System.Windows.Media.Imaging;
 
 namespace MyApp.Repositories
 {
-    public class UploadPhoto : RepositoryBase, IUploadPhoto
+    public class UploadApp : RepositoryBase, IUploadPhoto
     {
         private byte[] byteArray;
 
-        public void SetUploadPhoto()
+        public void SetUploadApp(AppModel app)
         {
-            var bitmap = new BitmapImage(new Uri(@"C:\Users\ADMIN\source\repos\MyApp\Images\Gmail.png", UriKind.Relative));
+            var bitmap = new BitmapImage(new Uri(app.Image, UriKind.Relative));
             var encoder = new JpegBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(bitmap));
             using (var stream = new MemoryStream())
@@ -26,11 +26,14 @@ namespace MyApp.Repositories
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string sql = "INSERT INTO Photos (Name, Image) VALUES (@Name, @Image)";
+                string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image) VALUES (NULL,@Name,@Company,@About, @Image)";
+                
                 using (var command = new MySqlCommand(sql, connection))
                 {
                     // установка параметров запроса
-                    command.Parameters.AddWithValue("@Name", "MyPhoto.jpg");
+                    command.Parameters.AddWithValue("@Name", app.Name);
+                    command.Parameters.AddWithValue("@Company", app.Company);
+                    command.Parameters.AddWithValue("@About", app.About);
                     command.Parameters.AddWithValue("@Image", byteArray); // byteArray - массив байтов изображения
 
                     // выполнение запроса

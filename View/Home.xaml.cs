@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using MyApp.Class;
+using MyApp.ViewModel;
 
 namespace MyApp.View
 {
@@ -15,7 +15,7 @@ namespace MyApp.View
         public Home()
         {
             InitializeComponent();
-            DataContext = new AppViewModel();
+            DataContext = new HomeViewModel();
         }
 
         private void appList_SelectionChanged(object sender, SelectionChangedEventArgs e)

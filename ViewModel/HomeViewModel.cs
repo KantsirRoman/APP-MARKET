@@ -1,11 +1,11 @@
-﻿using MyApp.Class;
+﻿using MyApp.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MyApp.Model
+namespace MyApp.ViewModel
 {
-    public class AppViewModel : INotifyPropertyChanged
+    public class HomeViewModel : INotifyPropertyChanged
     {
         private AppModel selectedApp;
         public ObservableCollection<AppModel> Apps { get; set; }
@@ -19,7 +19,7 @@ namespace MyApp.Model
             }
         }
 
-        public AppViewModel()
+        public HomeViewModel()
         {
             Apps = new ObservableCollection<AppModel>
             {

@@ -8,6 +8,7 @@ namespace MyApp.Model
 {
     public interface IUploadPhoto
     {
-       void SetUploadPhoto();
+       //void SetUploadApp(string AddressPhoto, string fileName, string fileCompany, string fileAbout);
+       void SetUploadApp(AppModel app);
     }
 }

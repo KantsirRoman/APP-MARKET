@@ -190,23 +190,25 @@
     <Compile Include="Model\AppModel.cs" />
     <Compile Include="Class\DBconnector.cs" />
     <Compile Include="Model\IUploadPhoto.cs" />
-    <Compile Include="Repositories\UploadPhoto.cs" />
-    <Compile Include="ViewModel\AppViewModel.cs" />
+    <Compile Include="Repositories\UploadApp.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="Model\IUserRepository.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="NavButton.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="ViewModel\ApplicationVM_old.cs" />
-    <Compile Include="ViewModel\AppVM_old.cs" />
-    <Compile Include="View\AddApp.xaml.cs">
-      <DependentUpon>AddApp.xaml</DependentUpon>
+    <Compile Include="ViewModel\AddAppPageViewModel.cs" />
+    <Compile Include="View\Download.xaml.cs">
+      <DependentUpon>Download.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddAppPage.xaml.cs">
+      <DependentUpon>AddAppPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserP.xaml.cs">
-      <DependentUpon>UserP.xaml</DependentUpon>
+    <Compile Include="View\AppBlock.xaml.cs">
+      <DependentUpon>AppBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="WS.xaml.cs">
       <DependentUpon>WS.xaml</DependentUpon>
@@ -227,11 +229,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AddApp.xaml">
+    <Page Include="View\Download.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddAppPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,7 +249,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserP.xaml">
+    <Page Include="View\AppBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -291,6 +301,7 @@
     <Resource Include="Images\Gmail.png" />
     <Resource Include="Images\inst.png" />
     <Resource Include="Images\Tik.png" />
+    <Resource Include="Images\explore.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>
