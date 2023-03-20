@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using MyApp.ViewModel;
+using System.ComponentModel;
 
 namespace MyApp.View
 {
@@ -61,11 +62,17 @@ namespace MyApp.View
             }
             else
             {
-                AppModel model = new AppModel();
-               // model.Name = "Roman";
+                //var editableCollectionView = itemsControl.Items as IEditableCollectionView;
+
+                
+
+                /*AppModel model = new AppModel();
+                model.Name = "Roman";
                 IUploadPhoto UpPh = new UploadApp();
-                UpPh.SetUploadApp(model);
+                UpPh.SetUploadApp(model);*/
             }
         }
+
+        
     }
 }
