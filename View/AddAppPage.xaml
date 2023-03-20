@@ -32,18 +32,19 @@
                 <Label Content="Опис" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label Content="Фото" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel Grid.Column="1" Grid.ColumnSpan="2" >
-                <TextBox Text="{Binding Path=name}" Margin="0,10,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="{Binding Path=company}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-                <TextBox  Text="{Binding Path=about}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <Button Content="Button" Margin="0,10,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Click="UploadPhoto"/>
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding application}" >
+                <TextBox Text="{Binding name,    UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox Text="{Binding company, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox Text="{Binding about,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Button Content="{Binding image,  UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Click="UploadPhoto"/>
                 <Button Content="Button" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="58" Width="278" Click="UploadToDB" Margin="0,30,0,0"/>
             </StackPanel>
-            
-            <StackPanel Grid.Column="3" Grid.ColumnSpan="1" DataContext="{Binding application}">
+
+            <StackPanel Grid.Column="2" Grid.ColumnSpan="1" DataContext="{Binding application}">
                 <TextBox Text="{Binding Path=name}" Margin="0,10,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="{Binding Path=company}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-                <TextBox  Text="{Binding Path=about}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox Text="{Binding  Path=company}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox  Text="{Binding  Path=about}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox  Text="{Binding  Path=image}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             </StackPanel>
 
 

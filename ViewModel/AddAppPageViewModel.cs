@@ -5,16 +5,16 @@ using System.Runtime.CompilerServices;
 
 namespace MyApp.ViewModel
 {
-    internal class AddAppPageViewModel :  INotifyPropertyChanged
+    public class AddAppPageViewModel : INotifyPropertyChanged
     {
-        public AppModel InpytInfo { get; set; }
-
+        
         public AppModel application { get; set; }
 
-        
+
         public AddAppPageViewModel()
         {
-            application = new AppModel("Назва", "Компанія", "Інфо", @"Адресса фото");
+            application = new AppModel();
+            /*application = new AppModel("Назва", "Компанія", "Інфо", @"Адресса фото");*/
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
