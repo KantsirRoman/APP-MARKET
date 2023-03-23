@@ -22,30 +22,44 @@
         <TextBlock Text="APP MARKET" FontFamily="ubuntu" HorizontalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="378" Grid.Column="1"/>
         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1" x:Name="appList" SelectionChanged="appList_SelectionChanged" ItemsSource="{Binding Apps}" HorizontalAlignment="Center" BorderBrush="Transparent" Background="Transparent">
             <ListView.ItemsPanel>
-            <ItemsPanelTemplate>
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
-            </ItemsPanelTemplate>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
-                    <DataTemplate>
-                    <Grid Margin="10" Width="100" Height="140">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="15"/>
-                        </Grid.RowDefinitions>
+                <DataTemplate>
 
-                        <Image Grid.Row="0" Source="{Binding Path=image}" Stretch="UniformToFill" HorizontalAlignment="Center" Width="80" Height="80"/>
-                        <TextBlock Grid.Row="1" Style="{StaticResource Text30}" Text="{Binding Path=name}" HorizontalAlignment="Left" />
-                        <TextBlock Grid.Row="2" Text="{Binding Path=company}" HorizontalAlignment="Left" />
-                    </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                    <Border Height="90" Width="260" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#FFDFD7D7">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" >
+                                <Image Source="{Binding Path=image}" Stretch="UniformToFill"  Width="80" Height="80"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Width="170">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Content="{Binding Path=name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Label Grid.Row="1" Content="{Binding  Path=company}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>
 
-    <!--Мій макет
+<!--Мій макет
         
         <Grid.RowDefinitions >
             <RowDefinition Height="80"/>

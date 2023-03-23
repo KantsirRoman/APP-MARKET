@@ -15,41 +15,76 @@
 
     <Grid Background="#f1f3f5">
         <Grid.RowDefinitions>
-            <RowDefinition Height =" 100"/>
-            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="65"/>
+            <RowDefinition Height ="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Add App" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold"/>
-        <Grid Grid.Row="1" Background="Azure">
+
+        <TextBlock Text="Add App" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="250"/>
+
+        <Grid Grid.Row="1" Background="Azure" DataContext="{Binding application}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="220"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Label Content="Назва"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="26"/>
-                <Label Content="Компанія" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="Опис" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="Фото" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding application}" >
-                <TextBox Text="{Binding name,    UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="{Binding company, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="{Binding about,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <Button Content="{Binding image,  UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Click="UploadPhoto"/>
-                <Button Content="Button" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="58" Width="278" Click="UploadToDB" Margin="0,30,0,0"/>
-            </StackPanel>
-
-            <StackPanel Grid.Column="2" Grid.ColumnSpan="1" DataContext="{Binding application}">
-                <TextBox Text="{Binding Path=name}" Margin="0,10,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="{Binding  Path=company}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-                <TextBox  Text="{Binding  Path=about}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox  Text="{Binding  Path=image}" HorizontalAlignment="Left" Margin="0,10,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            </StackPanel>
 
 
 
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="130*"/>
+                </Grid.ColumnDefinitions>
 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="45"/>
+                    <RowDefinition Height ="45"/>
+                    <RowDefinition Height ="45"/>
+                    <RowDefinition Height ="45"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label  Grid.Column="1" Grid.Row="1"   Content="Назва"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="26"/>
+                <Label  Grid.Column="1" Grid.Row="2"   Content="Компанія" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label  Grid.Column="1" Grid.Row="3"   Content="Опис" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label  Grid.Column="1" Grid.Row="4"   Content="Фото" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+
+                <TextBox Grid.Column="2" Grid.Row="1"   x:Name="nameInput" Text="{Binding name,UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox Grid.Column="2" Grid.Row="2"   x:Name="companyInput" Text="{Binding company, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,5,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox Grid.Column="2" Grid.Row="3"   x:Name="aboutInput" Text="{Binding about,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="252" Height="36"/>
+                <Button  Grid.Column="2" Grid.Row="4"   Content="Додати фото" Margin="0,5,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Click="UploadPhoto"/>
+                <Button  Grid.Column="2" Grid.Row="4"   Content="Button" HorizontalAlignment="Left" Height="40" Width="230" Click="UploadToDB"/>
+
+            </Grid>
+
+            <Viewbox Grid.Column="1" Margin="0,20,0,0" VerticalAlignment="Top">
+                
+            <Border  Height="120" Width="320" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#FFDFD7D7" >
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" >
+                        <Image x:Name="PhotoInPreview" Source="{Binding Path=image}" Stretch="UniformToFill"  Width="110" Height="110"/>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Width="170">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Content="{Binding Path=name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Label Grid.Row="1" Content="{Binding  Path=company}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            </Viewbox>
         </Grid>
     </Grid>
 </Page>
