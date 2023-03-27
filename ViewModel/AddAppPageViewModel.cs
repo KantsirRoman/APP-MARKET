@@ -25,18 +25,7 @@ namespace MyApp.ViewModel
         }
     }
 
-    /*  private AppModel selectedApp;
-      public ObservableCollection<AppModel> Apps { get; set; }
-
-      public AppModel SelectedApp
-      {
-          get { return selectedApp; }
-          set
-          {
-              selectedApp = value;
-          }
-      }
-    --------------------------------------
+    /*  
       private AppModel _AppModel;
 
     public AppModel AppModel

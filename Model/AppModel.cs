@@ -14,13 +14,7 @@ namespace MyApp.Model
 {
     public class AppModel : INotifyPropertyChanged
     {
-        /*
-        public int Id { get; set; }
-        public string Name { get; set; } 
-        public string Company { get; set; }
-        public string About { get; set; }
-        public string Image { get; set; } 
-    }*/
+       
 
         public int Id;
         public string Name;

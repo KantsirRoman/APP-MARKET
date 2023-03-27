@@ -20,27 +20,14 @@ namespace MyApp.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Download(@"https://telegram.org/dl/desktop/win64");
-            DownloadStack(@"https://github.com/pbatard/rufus/releases/download/v3.21/rufus-3.21.exe");
+            DownloadFile(@"https://github.com/pbatard/rufus/releases/download/v3.21/rufus-3.21.exe");
            
         }
 
-        public string GetNameDownloadingFile(string UrlDwnldFile) {
-            int index = 0;
-            int length = UrlDwnldFile.Length;
-            for (int i = length - 1; i > 0; i--)
-            {
-                if (UrlDwnldFile[i] == '/')
-                {
-                    index = i + 1;
-                    break;
-                }
-            }
-            return UrlDwnldFile.Substring(index);
-        }
-        public void DownloadStack(string remoteUri)
+        public void DownloadFile(string remoteUri)
         {
            // string FilePath = Directory.GetCurrentDirectory() + "/tepdownload/" + Path.GetFileName(remoteUri); // path where download file to be saved, with filename, here I have taken file name from supplied remote url
-            string FilePath = @"C:\Users\ADMIN\Desktop\appp\" + Path.GetFileName(remoteUri); // path where download file to be saved, with filename, here I have taken file name from supplied remote url
+            string FilePath = @"C:\Users\ADMIN\Desktop\" + Path.GetFileName(remoteUri); // path where download file to be saved, with filename, here I have taken file name from supplied remote url
             using (WebClient client = new WebClient())
             {
                 try
@@ -66,22 +53,12 @@ namespace MyApp.View
             }
         }
        
-        public void Download(string URL)
-        {
-           // string URL = "https://github.com/KantsirRoman/Sticker/raw/main/rufus-3.21.exe";
-          //  string URL = "https://github.com/pbatard/rufus/releases/download/v3.21/rufus-3.21.exe";
-
-            WebClient down = new WebClient();
-            down.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
-            down.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-            down.DownloadFileAsync(new Uri(URL), @"C:\Users\ADMIN\Desktop\appp\" + GetNameDownloadingFile(URL));
-        }
 
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             //string size = (Convert.ToDouble(e.ResponseHeaders["Content-Length"])/1048576).ToString("#.#");
             PrBar.Value = e.ProgressPercentage;
-            loadbox.Content = $"Загружено: {((double)e.BytesReceived/1048576).ToString("0.00 МБ")}";
+            loadbox.Content = $"Завантажено: {((double)e.BytesReceived/1048576).ToString("0.00 МБ")}";
         }
 
         private void Completed(object sender, AsyncCompletedEventArgs e)
@@ -98,3 +75,27 @@ namespace MyApp.View
         }
     }
 }
+      /*  public void Download(string URL)
+        {
+           // string URL = "https://github.com/KantsirRoman/Sticker/raw/main/rufus-3.21.exe";
+          //  string URL = "https://github.com/pbatard/rufus/releases/download/v3.21/rufus-3.21.exe";
+
+            WebClient down = new WebClient();
+            down.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
+            down.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
+            down.DownloadFileAsync(new Uri(URL), @"C:\Users\ADMIN\Desktop\appp\" + GetNameDownloadingFile(URL));
+        }*/
+
+        /*public string GetNameDownloadingFile(string UrlDwnldFile) {
+            int index = 0;
+            int length = UrlDwnldFile.Length;
+            for (int i = length - 1; i > 0; i--)
+            {
+                if (UrlDwnldFile[i] == '/')
+                {
+                    index = i + 1;
+                    break;
+                }
+            }
+            return UrlDwnldFile.Substring(index);
+        }*/

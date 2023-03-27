@@ -29,13 +29,6 @@ namespace MyApp.ViewModel
             new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "4" },
             new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "5" },
             new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "6" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "7" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "8" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "4" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "5" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "6" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "7" },
-            new AppModel { Id = 4, Image = @"C:\Users\ADMIN\Desktop\WPF\Tik.png", Name = "Tik", Company = "8" }
             };
         }
 

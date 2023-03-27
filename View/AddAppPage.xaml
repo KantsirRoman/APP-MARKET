@@ -22,7 +22,7 @@
 
         <TextBlock Text="Add App" FontFamily="ubuntu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="250"/>
 
-        <Grid Grid.Row="1" Background="Azure" DataContext="{Binding application}">
+        <Grid Grid.Row="1" Background="#dadfe4" DataContext="{Binding application}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -38,10 +38,10 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
+                    <RowDefinition Height ="50"/>
                     <RowDefinition Height ="45"/>
                     <RowDefinition Height ="45"/>
-                    <RowDefinition Height ="45"/>
-                    <RowDefinition Height ="45"/>
+                    <RowDefinition Height ="70"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -52,13 +52,13 @@
 
                 <TextBox Grid.Column="2" Grid.Row="1"   x:Name="nameInput" Text="{Binding name,UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 <TextBox Grid.Column="2" Grid.Row="2"   x:Name="companyInput" Text="{Binding company, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="0,5,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-                <TextBox Grid.Column="2" Grid.Row="3"   x:Name="aboutInput" Text="{Binding about,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="252" Height="36"/>
+                <TextBox Grid.Column="2" Grid.Row="3"   x:Name="aboutInput" Text="{Binding about,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="252" Height="65"/>
                 <Button  Grid.Column="2" Grid.Row="4"   Content="Додати фото" Margin="0,5,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Click="UploadPhoto"/>
                 <Button  Grid.Column="2" Grid.Row="4"   Content="Button" HorizontalAlignment="Left" Height="40" Width="230" Click="UploadToDB"/>
 
             </Grid>
 
-            <Viewbox Grid.Column="1" Margin="0,20,0,0" VerticalAlignment="Top">
+            <Viewbox Grid.Column="1" Margin="0,15,0,0" VerticalAlignment="Top">
                 
             <Border  Height="120" Width="320" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#FFDFD7D7" >
                 <Grid >

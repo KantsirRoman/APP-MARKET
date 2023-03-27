@@ -5,6 +5,7 @@
              StartupUri="WS.xaml">
     <!--StartupUri="WS.xaml"
     StartupUri="Authorization.xaml"
+    StartupUri="View/LoginWindow.xaml"
     -->
     
     <Application.Resources>
@@ -14,6 +15,7 @@
                 <ResourceDictionary Source="Themes/AT.xaml" />
                 <ResourceDictionary Source="Themes/Generic.xaml" />
                 <ResourceDictionary Source="Themes/Search.xaml" />
+                <ResourceDictionary Source="Themes/LoginTheme.xaml" />
                
 
             </ResourceDictionary.MergedDictionaries>

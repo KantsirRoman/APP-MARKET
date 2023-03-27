@@ -29,7 +29,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
 
-                    <Border Height="90" Width="260" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#FFDFD7D7">
+                    <Border Height="90" Width="260" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#dadfe4">
                         <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="90"/>

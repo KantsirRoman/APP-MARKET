@@ -207,8 +207,11 @@
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AppBlockForAddAppPage.xaml.cs">
+    <Compile Include="View\UserComponent\AppBlockForAddAppPage.xaml.cs">
       <DependentUpon>AppBlockForAddAppPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WS.xaml.cs">
       <DependentUpon>WS.xaml</DependentUpon>
@@ -226,6 +229,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Themes\AT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\LoginTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,7 +256,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AppBlockForAddAppPage.xaml">
+    <Page Include="View\UserComponent\AppBlockForAddAppPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -302,6 +313,8 @@
     <Resource Include="Images\inst.png" />
     <Resource Include="Images\Tik.png" />
     <Resource Include="Images\explore.png" />
+    <Resource Include="Images\Email.png" />
+    <Resource Include="Images\Lock.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>

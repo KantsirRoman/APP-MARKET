@@ -88,12 +88,7 @@ namespace MyApp.View
                 {
                     MessageBox.Show("Пусті поля");
                 }
-                //var editableCollectionView = itemsControl.Items as IEditableCollectionView;
-
-
-                /*  AppModel model = new AppModel();
-                  model.Name = "Roman";*/
-            }
+              }
         }
 
         private void Block_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
