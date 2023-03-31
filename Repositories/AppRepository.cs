@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace MyApp.Repositories
 {
-    public class UploadApp : RepositoryBase, IUploadPhoto
+    public class AppRepository : RepositoryBase, IAppRepository
     {
         private byte[] byteArray;
 

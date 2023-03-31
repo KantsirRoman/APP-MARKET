@@ -103,7 +103,7 @@ namespace MyApp.View
                 if (Name != string.Empty && Company != string.Empty && About != string.Empty)
                 {
                     AppModel newApp = new AppModel(Name, Company, About, byteArray);
-                    IUploadPhoto UpPh = new UploadApp();
+                    IAppRepository UpPh = new AppRepository();
                     UpPh.SetUploadApp(newApp);
                     MessageBox.Show("Додано");
                 }

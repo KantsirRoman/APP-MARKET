@@ -8,12 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="780"
       Title="Home">
-    <!--<Page.Resources>
-        <ItemsPanelTemplate x:Key="listPanelTemplate">
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
-        </ItemsPanelTemplate>
-    </Page.Resources>
-    -->
+
     <Grid Background="#f1f3f5">
         <Grid.RowDefinitions >
             <RowDefinition Height="80"/>
@@ -49,7 +44,7 @@
 
                                 <Label Grid.Row="0" Content="{Binding Path=name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <Label Grid.Row="1" Content="{Binding  Path=company}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             </Grid>
                         </Grid>
                     </Border>
@@ -57,62 +52,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
-</Page>
-
-<!--Мій макет
-        
-        <Grid.RowDefinitions >
-            <RowDefinition Height="80"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="APP MARKET" FontFamily="ubuntu" HorizontalAlignment="Center" Foreground="#FFB197FC" FontSize="60" FontWeight="Bold" Height="72" Width="378" Grid.Column="1"/>
-        <Grid Grid.Row="1"  Background="AliceBlue" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition MinWidth="150" MaxWidth="400"/>
-                <ColumnDefinition MinWidth="150" MaxWidth="400"/>
-                <ColumnDefinition MinWidth="150" MaxWidth="400"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition MinHeight="120"/>
-                <RowDefinition MinHeight="120"/>
-                <RowDefinition MinHeight="120"/>
-            </Grid.RowDefinitions>
-            <Viewbox Grid.Column="0" Grid.Row="0">
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/Tik.png"/>
-                    <TextBlock>TikTok</TextBlock>
-                </StackPanel>
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="0" >
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/Inst.png"/>
-                    <TextBlock>Instagram</TextBlock>
-                </StackPanel>
-            </Viewbox>
-            <Viewbox Grid.Column="3" Grid.Row="0" >
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/Atv.png"/>
-                    <TextBlock>Apple TV</TextBlock>
-                </StackPanel>
-            </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="1">
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/gmail.png"/>
-                    <TextBlock>Gmail</TextBlock>
-                </StackPanel>
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="1">
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/Message.png"/>
-                    <TextBlock>GPT</TextBlock>
-                </StackPanel>
-            </Viewbox>
-            <Viewbox Grid.Column="3" Grid.Row="1">
-                <StackPanel Style="{StaticResource StackP}">
-                    <Image Source="/Images/Message.png"/>
-                    <TextBlock>123</TextBlock>
-                </StackPanel>
-            </Viewbox>
-        </Grid>
-        
-        -->         
+</Page>         

@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-//model APP
-
 namespace MyApp.Model
 {
     public class AppModel : INotifyPropertyChanged
     {
-
-
         public int Id;
         public string Name;
         public string Company;
         public string About;
         public byte[] Image;
         public AppModel()
-            /*: this("Instagram", "1","about",@"C:\Users\ADMIN\Desktop\WPF\inst.png")*/
         {
         }
 

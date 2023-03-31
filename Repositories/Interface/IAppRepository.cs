@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyApp.Model
 {
-    public interface IUploadPhoto
+    public interface IAppRepository
     {
-        //void SetUploadApp(string AddressPhoto, string fileName, string fileCompany, string fileAbout);
         void SetUploadApp(AppModel app);
         List<AppModel> GetApp();
     }

@@ -23,7 +23,7 @@ namespace MyApp.ViewModel
 
         public HomeViewModel()
         {
-            IUploadPhoto GetAPP = new UploadApp();
+            IAppRepository GetAPP = new AppRepository();
             GetAPP.GetApp();
             Apps = new ObservableCollection<AppModel>(GetAPP.GetApp());
             

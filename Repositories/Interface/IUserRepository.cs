@@ -12,6 +12,6 @@ namespace MyApp.Model
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
         IEnumerable<UserModel> GetByAll();
-        //...
+        
     }
 }
