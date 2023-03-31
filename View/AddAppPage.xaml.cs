@@ -10,16 +10,16 @@ using System.ComponentModel;
 using System;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Media.Imaging;
+using System.Drawing;
 
 namespace MyApp.View
 {
-    /// <summary>
-    /// Логика взаимодействия для AddAppP.xaml
-    /// </summary>
+
     public partial class AddAppPage : Page
     {
         private string filePath = string.Empty;
         private string fileName = string.Empty;
+        private byte[] byteArray;
         public AddAppPage()
         {
             InitializeComponent();
@@ -54,14 +54,37 @@ namespace MyApp.View
                 }
                 MessageBox.Show(filePath);
 
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(filePath);
-                bitmap.EndInit();
-                PhotoInPreview.Source = bitmap;
-                
+                byteArray = ImageToByteArray(filePath);
+
+
+                 BitmapImage bitmap = new BitmapImage();
+                 bitmap.BeginInit();
+                 bitmap.UriSource = new Uri(filePath);
+                 bitmap.EndInit();
+
+                 PhotoInPreview.Source = bitmap;
+
             }
             
+        }
+        public byte[] ImageToByteArray(string filePath)
+        {
+            byte[] byteArray;
+
+            BitmapImage bitmap = new BitmapImage(new Uri(filePath));
+            /*bitmap.BeginInit();
+            bitmap.UriSource = new Uri(filePath);
+            bitmap.EndInit();*/
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(bitmap));
+                encoder.Save(stream);
+                byteArray = stream.ToArray();
+            }
+
+            return byteArray;
         }
 
         private void UploadToDB(object sender, RoutedEventArgs e)
@@ -79,7 +102,7 @@ namespace MyApp.View
 
                 if (Name != string.Empty && Company != string.Empty && About != string.Empty)
                 {
-                    AppModel newApp = new AppModel(Name, Company, About, filePath);
+                    AppModel newApp = new AppModel(Name, Company, About, byteArray);
                     IUploadPhoto UpPh = new UploadApp();
                     UpPh.SetUploadApp(newApp);
                     MessageBox.Show("Додано");

@@ -14,8 +14,9 @@ namespace MyApp.ViewModel
         public AddAppPageViewModel()
         {
             application = new AppModel();
-            /*application = new AppModel("Назва", "Компанія", "Інфо", @"Адресса фото");*/
         }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

@@ -14,19 +14,19 @@ namespace MyApp.Model
 {
     public class AppModel : INotifyPropertyChanged
     {
-       
+
 
         public int Id;
         public string Name;
         public string Company;
         public string About;
-        public string Image;
+        public byte[] Image;
         public AppModel()
             /*: this("Instagram", "1","about",@"C:\Users\ADMIN\Desktop\WPF\inst.png")*/
         {
         }
 
-        public AppModel(string Name, string Company, string About, string Image)
+        public AppModel(string Name, string Company, string About, byte[] Image)
         {
             this.Name = Name;
             this.Company = Company;
@@ -68,7 +68,7 @@ namespace MyApp.Model
 
         }
 
-        public string image
+        public byte[] image
         {
             get { return Image; }
             set

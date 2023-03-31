@@ -205,8 +205,8 @@
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserComponent\AppBlockForAddAppPage.xaml.cs">
-      <DependentUpon>AppBlockForAddAppPage.xaml</DependentUpon>
+    <Compile Include="View\UserComponent\AppBlock.xaml.cs">
+      <DependentUpon>AppBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -254,7 +254,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserComponent\AppBlockForAddAppPage.xaml">
+    <Page Include="View\UserComponent\AppBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

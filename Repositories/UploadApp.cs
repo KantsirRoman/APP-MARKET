@@ -18,32 +18,40 @@ namespace MyApp.Repositories
 
         public void SetUploadApp(AppModel app)
         {
-            var bitmap = new BitmapImage(new Uri(app.Image, UriKind.Relative));
-            var encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmap));
-            using (var stream = new MemoryStream())
+            try
             {
-                encoder.Save(stream);
-                byteArray = stream.ToArray();
-            }
 
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image) VALUES (NULL,@Name,@Company,@About, @Image)";
 
-                using (var command = new MySqlCommand(sql, connection))
+                using (var connection = GetConnection())
                 {
-                    // установка параметров запроса
-                    command.Parameters.AddWithValue("@Name", app.Name);
-                    command.Parameters.AddWithValue("@Company", app.Company);
-                    command.Parameters.AddWithValue("@About", app.About);
-                    command.Parameters.AddWithValue("@Image", byteArray); // byteArray - массив байтов изображения
+                    connection.Open();
+                    string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image) VALUES (NULL,@Name,@Company,@About, @Image)";
 
-                    // выполнение запроса
-                    command.ExecuteNonQuery();
+                    using (var command = new MySqlCommand(sql, connection))
+                    {
+                        // установка параметров запроса
+                        command.Parameters.AddWithValue("@Name", app.Name);
+                        command.Parameters.AddWithValue("@Company", app.Company);
+                        command.Parameters.AddWithValue("@About", app.About);
+                        command.Parameters.AddWithValue("@Image", app.Image); // byteArray - массив байтов изображения
+
+                        // выполнение запроса
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    Console.WriteLine("Unable to connect to the database.");
+                }
+                else
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
             }
 
 
@@ -52,38 +60,51 @@ namespace MyApp.Repositories
 
         public List<AppModel> GetApp()
         {
-            using (var connection = GetConnection())
+            List<AppModel> myDataList = new List<AppModel>();
+            try
             {
-                connection.Open();
-                string sql = "SELECT Id, Name,Company, About, Image FROM AllApp";
 
-                List<AppModel> myDataList = new List<AppModel>();
-
-
-
-                using (var command = new MySqlCommand(sql, connection))
+                using (var connection = GetConnection())
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    connection.Open();
+                    string sql = "SELECT Id, Name,Company, About, Image FROM AllApp";
+
+                    using (var command = new MySqlCommand(sql, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            int id = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-                            string company = reader.GetString(2);
-                            string about = reader.GetString(3);
-                            string image = reader.GetString(3);
+                            while (reader.Read())
+                            {
+                                int id = reader.GetInt32(0);
+                                string name = reader.GetString(1);
+                                string company = reader.GetString(2);
+                                string about = reader.GetString(3);
+                                byte[] imageBytes = new byte[reader.GetBytes(4, 0, null, 0, int.MaxValue)];
+                                reader.GetBytes(4, 0, imageBytes, 0, imageBytes.Length);
 
 
-                            AppModel retApp = new AppModel { Id = id, Name = name, Company = company, About = about, Image = image };
-                            myDataList.Add(retApp);
+                                AppModel retApp = new AppModel { Id = id, Name = name, Company = company, About = about, Image = imageBytes };
+                                myDataList.Add(retApp);
 
+                            }
                         }
+                        connection.Close();
                     }
-                    connection.Close();
-                }
 
-            return myDataList;
+                }
             }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    Console.WriteLine("Unable to connect to the database.");
+                }
+                else
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            return myDataList;
         }
     }
 }
