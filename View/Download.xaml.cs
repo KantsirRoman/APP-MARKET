@@ -4,6 +4,7 @@ using System.Net;
 using System.ComponentModel;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace MyApp.View
 {
@@ -37,14 +38,12 @@ namespace MyApp.View
                         Directory.CreateDirectory("tepdownload");
                     }
                     Uri uri = new Uri(remoteUri);
-                    //password username of your file server eg. ftp username and password
-                    client.Credentials = new NetworkCredential("username", "password");
-                    //delegate method, which will be called after file download has been complete.
-                    client.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
-                    //delegate method for progress notification handler.
-                    client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-                    // uri is the remote url where filed needs to be downloaded, and FilePath is the location where file to be saved
-                    client.DownloadFileAsync(uri, FilePath);
+                    client.Credentials = new NetworkCredential("username", "password");    //password username of your file server eg. ftp username and password
+                    client.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed); //delegate method, which will be called after file download has been complete.
+
+                    client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged); //delegate method for progress notification handler.
+
+                    client.DownloadFileAsync(uri, FilePath);   // uri is the remote url where filed needs to be downloaded, and FilePath is the location where file to be saved
                 }
                 catch (Exception)
                 {

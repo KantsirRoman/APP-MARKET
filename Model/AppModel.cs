@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace MyApp.Model
 {
-    public class AppModel : INotifyPropertyChanged
+    public class AppModel /*: INotifyPropertyChanged*/
     {
         public int Id;
         public string Name;

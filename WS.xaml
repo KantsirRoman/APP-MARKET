@@ -19,9 +19,8 @@
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" x:Name="sidebar" BorderThickness="0" >
             <local:NavButton x:Name="StartP" Navlink="/View/Home.xaml" Margin="0,40,0,5"  Icon="/Images/Home.png" />
-            <local:NavButton Navlink="/View/Home.xaml" Margin="0,5,0,5"  Icon="/Images/Search.png"/>
-            <local:NavButton Navlink="/View/Download.xaml" Margin="0,5,0,5"  Icon="/Images/BookMark.png"/>
-            <local:NavButton Navlink="/View/AddAppPage.xaml" Margin="0,5,0,5" Icon="/Images/UPD240.png"/>
+            <local:NavButton Navlink="/View/Download.xaml" Margin="0,5,0,5"  Icon="/Images/download.png"/>
+            <local:NavButton Navlink="/View/AddAppPage.xaml" Margin="0,5,0,5" Icon="/Images/add.png"/>
         </ListBox>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>

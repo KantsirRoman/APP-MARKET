@@ -1,4 +1,4 @@
-﻿<Window x:Class="MyApp.View.LoginWindow"
+﻿<Window x:Class="MyApp.View.RegisterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -48,26 +48,28 @@
                 </Canvas>
 
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="Реєстрація" Style="{StaticResource TitleText}" />
-                    <TextBlock Text="Введіть свою дані для входу.                          
-                               Якщо ви не маєте акаунту - пройдіть реєстрацію:"  Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
-                    <Button Content="Реєстрація" Style="{StaticResource button}" Click="SignUp" />
+                    <TextBlock Text="Авторизація" Style="{StaticResource TitleText}" />
+                    <TextBlock Text="Введіть свою особисту інформацію та створіть новий обліковий запис, Після чого увійдіть:" Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
+                    <Button Content="Назад" Style="{StaticResource button}" Click="InputBool" />
                 </StackPanel>
             </Grid>
         </Border>
 
         <Border Background="#FFFFFF" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="Авторизація" Foreground="#3AB19B" Style="{StaticResource TitleText}" />
+                <TextBlock Text="Реєстрація" Foreground="#3AB19B" Style="{StaticResource TitleText}" />
 
-                <TextBox  x:Name="TextLog"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
 
-                <PasswordBox  x:Name="TextPass"  Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
+                <TextBox  x:Name="TextLogR"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
+                <TextBox  x:Name="TextEmail" Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
 
-                <Button Content="Увійти" Style="{StaticResource mainButton}" Click="Input" />
+                <PasswordBox  x:Name="TextPassR" Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
+                <PasswordBox  x:Name="TextPassR2" Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
+
+                <Button Content="Створити" Style="{StaticResource mainButton}" Click="CreatAcc" />
             </StackPanel>
         </Border>
-        <Label x:Name = "statusText" Grid.Column="1" HorizontalAlignment = "Center"  VerticalAlignment = "Top" Width = "250" Height = "35" Foreground="Black" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Margin="0,430,0,0" />
+        <Label x:Name = "statusTextR" Grid.Column="1" HorizontalAlignment = "Center"  VerticalAlignment = "Top" Width = "250" Height = "35" Foreground="Black" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Margin="0,430,0,0" />
 
     </Grid>
 </Window>

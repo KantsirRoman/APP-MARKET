@@ -16,22 +16,7 @@ namespace MyApp
         public WorkingSpaceW()
         {
             InitializeComponent();
-            //frame.Navigate("/View/Home.xaml");
-
-            //frame.Navigate(@"{System.Windows.Controls.Frame: View/Home.xaml}".Navlink);
-            //frame.Navigate(@"MyAPP/View/Home.xaml");
-            // sidebar.SelectedItem as NavButton = "StartP";
         }
-        /*private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {   
-            frame.Navigate(new Home());
-        }
-
-        private void UserButton_Click(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new UserP());
-
-        }*/
         private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

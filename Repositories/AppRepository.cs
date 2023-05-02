@@ -14,7 +14,6 @@ namespace MyApp.Repositories
 {
     public class AppRepository : RepositoryBase, IAppRepository
     {
-        private byte[] byteArray;
 
         public void SetUploadApp(AppModel app)
         {

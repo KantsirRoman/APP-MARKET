@@ -38,7 +38,7 @@
     <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FF3957AF"/>
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF0DEBE3"/>
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FFBD9E3B"/> <!--Вибране поле-->
-    <SolidColorBrush x:Key="TextBox.Background" Color="Aqua"/>
+    <SolidColorBrush x:Key="TextBox.Background" Color="White"/>
     
     <!--Текстові поля входу-->
     <Style x:Key="MyTextBox" TargetType="{x:Type TextBox}">
@@ -50,7 +50,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="bor" Padding="5,0,5,0" CornerRadius="12" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                    <Border x:Name="bor" Padding="5,0,5,0" CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
                     <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -123,6 +123,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>

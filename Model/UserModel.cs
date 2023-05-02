@@ -18,14 +18,14 @@ namespace MyApp.Model
         {
         }
 
-        UserModel(string firstname, string lastname, string email, string password)
+    /*    UserModel(string firstname, string lastname, string email, string password)
         {
             
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.Email = email;
             this.Password = password;
-        }
+        }*/
         public UserModel(string email, string password)
         {
             this.Email = email;
