@@ -12,6 +12,7 @@
     
     <Grid Background="#FF444444" MouseDown="Drag" >
 
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="500"/>
