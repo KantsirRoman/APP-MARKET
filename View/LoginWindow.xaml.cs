@@ -7,9 +7,7 @@ using System.Windows.Input;
 
 namespace MyApp.View
 {
-    /// <summary>
-    /// Логика взаимодействия для LoginWindow.xaml
-    /// </summary>
+
     public partial class LoginWindow : Window
     {
         public static LoginWindow WindowDrag;
@@ -17,7 +15,7 @@ namespace MyApp.View
         {
             InitializeComponent();
             WindowDrag = this;
-            Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+           Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
 
         }
 
@@ -27,7 +25,7 @@ namespace MyApp.View
                 this.DragMove();
         }
 
-        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Close_Butt(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
         }

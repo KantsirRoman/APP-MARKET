@@ -12,24 +12,13 @@
         Height="500" 
         Width="800">
 
-    <Window.DataContext>
-        <ViewModel:LoginViewModel/>
-    </Window.DataContext>
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-    </Window.Resources>
-    <Window.Visibility>
-        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
-    </Window.Visibility>
-
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="1.5*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="/Images/CloseButt2.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="Image_MouseUp" Style="{StaticResource imgClose}"/>
+        <Image Source="/Images/CloseButt2.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="Close_Butt" Style="{StaticResource imgClose}"/>
 
         <Border CornerRadius="10 0 0 10">
             <Border.Background>
@@ -49,8 +38,8 @@
 
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="Реєстрація" Style="{StaticResource TitleText}" />
-                    <TextBlock Text="Введіть свою дані для входу.                          
-                               Якщо ви не маєте акаунту - пройдіть реєстрацію:"  Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
+                    <TextBlock Text="Введіть свої дані для входу.                          
+                               Якщо ви не маєте акаунт - пройдіть реєстрацію:"  Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
                     <Button Content="Реєстрація" Style="{StaticResource button}" Click="SignUp" />
                 </StackPanel>
             </Grid>
@@ -59,9 +48,9 @@
         <Border Background="#FFFFFF" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="Авторизація" Foreground="#3AB19B" Style="{StaticResource TitleText}" />
-
+                <Label Content="Пошта" Width="340" Height="25"/>
                 <TextBox  x:Name="TextLog"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
-
+                <Label Content="Пароль" Height="25" Width="340"/>
                 <PasswordBox  x:Name="TextPass"  Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
 
                 <Button Content="Увійти" Style="{StaticResource mainButton}" Click="Input" />

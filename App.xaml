@@ -5,7 +5,6 @@
              StartupUri="View/LoginWindow.xaml">
     <!--
     StartupUri="WS.xaml"
-    StartupUri="Authorization.xaml"
     StartupUri="View/LoginWindow.xaml"
     -->
     

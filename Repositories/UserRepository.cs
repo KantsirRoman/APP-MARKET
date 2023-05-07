@@ -17,7 +17,8 @@ namespace MyApp.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO User (Id, Firstname, Lastname, Gmail, Password) VALUES (NULL, '', '', @gmailUser, @password);";
+                command.CommandText = "INSERT INTO User (Id, Name, Gmail, Password) VALUES (NULL, @name, @gmailUser, @password);";
+                command.Parameters.Add("@name", (MySqlDbType)SqlDbType.NVarChar).Value = userModel.Name;
                 command.Parameters.Add("@gmailUser", (MySqlDbType)SqlDbType.NVarChar).Value = userModel.Email;
                 command.Parameters.Add("@password", (MySqlDbType)SqlDbType.NVarChar).Value = userModel.Password;
 
@@ -91,9 +92,8 @@ namespace MyApp.Repositories
                         user = new UserModel()
                         {
                             Id = reader[0].ToString(),
-                            Firstname = reader[1].ToString(),
-                            Lastname = reader[2].ToString(),
-                            Email = reader[3].ToString(),
+                            Name = reader[1].ToString(),
+                            Email = reader[2].ToString(),
                             Password = string.Empty,
                         };
                     }

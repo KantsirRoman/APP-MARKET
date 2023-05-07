@@ -17,11 +17,13 @@
             <ColumnDefinition Width="60"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
         <ListBox Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" x:Name="sidebar" BorderThickness="0" >
             <local:NavButton x:Name="StartP" Navlink="/View/Home.xaml" Margin="0,40,0,5"  Icon="/Images/Home.png" />
             <local:NavButton Navlink="/View/Download.xaml" Margin="0,5,0,5"  Icon="/Images/download.png"/>
             <local:NavButton Navlink="/View/AddAppPage.xaml" Margin="0,5,0,5" Icon="/Images/add.png"/>
         </ListBox>
+        
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -40,7 +42,7 @@
                     <TextBox Name="txtSearch" Style="{StaticResource textBox}"/>
                 </Grid>
             </Border>
-            <Frame Grid.Column="1" Grid.Row="1" x:Name="frame" NavigationUIVisibility="Hidden" Background="#dadfe4"/>
+            <Frame Grid.Column="1" Grid.Row="1" x:Name="frame" NavigationUIVisibility="Hidden" Background="#f1f3f5" />
         </Grid>
 
     </Grid>

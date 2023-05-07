@@ -10,22 +10,19 @@ namespace MyApp.Model
     public class UserModel
     {
         public string Id { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public UserModel()
         {
         }
 
-    /*    UserModel(string firstname, string lastname, string email, string password)
+        public UserModel(string name, string email, string password)
         {
-            
-            this.Firstname = firstname;
-            this.Lastname = lastname;
+            this.Name = name;
             this.Email = email;
             this.Password = password;
-        }*/
+        }
         public UserModel(string email, string password)
         {
             this.Email = email;

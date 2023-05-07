@@ -12,24 +12,13 @@
         Height="500" 
         Width="800">
 
-    <Window.DataContext>
-        <ViewModel:LoginViewModel/>
-    </Window.DataContext>
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-    </Window.Resources>
-    <Window.Visibility>
-        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
-    </Window.Visibility>
-
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="1.5*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="/Images/CloseButt2.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="Image_MouseUp" Style="{StaticResource imgClose}"/>
+        <Image Source="/Images/CloseButt2.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="Close_Butt" Style="{StaticResource imgClose}"/>
 
         <Border CornerRadius="10 0 0 10">
             <Border.Background>
@@ -59,10 +48,12 @@
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="Реєстрація" Foreground="#3AB19B" Style="{StaticResource TitleText}" />
 
-
-                <TextBox  x:Name="TextLogR"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
+                <Label Content="І'мя" Width="340" Height="25"/>
+                <TextBox  x:Name="TextNameR"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
+                <Label Content="Пошта" Width="340" Height="25"/>
                 <TextBox  x:Name="TextEmail" Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
 
+                <Label Content="Пароль двічі" Width="340" Height="25"/>
                 <PasswordBox  x:Name="TextPassR" Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
                 <PasswordBox  x:Name="TextPassR2" Style="{DynamicResource PasswordBoxB}" Width="340" Height="30" Margin="5"/>
 

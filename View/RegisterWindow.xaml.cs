@@ -25,24 +25,24 @@ namespace MyApp.View
                 this.DragMove();
         }
 
-        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Close_Butt(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
         private void CreatAcc(object sender, RoutedEventArgs e)
         {
-            string LoginR = TextLogR.Text.ToString();
+            string NameR = TextNameR.Text.ToString();
             string Email = TextEmail.Text.ToString();
             string PasswordR = TextPassR.Password.ToString();
             string PasswordR2 = TextPassR2.Password.ToString();
 
-            if (LoginR != "" && Email != "" && PasswordR != "" && Email.Contains("@gmail.com"))
+            if (NameR != "" && Email != "" && PasswordR != "" && Email.Contains("@gmail.com"))
             {
 
                 if (PasswordR == PasswordR2)
                 {
-                    UserModel NewUser = new UserModel(Email, PasswordR);
+                    UserModel NewUser = new UserModel(NameR, Email, PasswordR);
                     IUserRepository userRepository = new UserRepository();
                     switch (userRepository.Add(NewUser))
                     {
@@ -65,9 +65,6 @@ namespace MyApp.View
                         default:
                             break;
                     }
-                    /*User nuser = new User(LoginR, Email, PasswordR);
-                        collectionUsers.InsertOne(nuser);
-                        statusTextR.Content = $"Аккаунт {LoginR} создан";*/
                 }
                 else
                 {
@@ -79,7 +76,7 @@ namespace MyApp.View
             {
                 if (Email == "" || PasswordR == "")
                 {
-                    statusTextR.Content = "Пустые поля";
+                    statusTextR.Content = "Пусті поля";
                 }
                 else if (!Email.Contains("@gmail.com"))
                 {
