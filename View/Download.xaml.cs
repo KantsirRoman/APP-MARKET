@@ -20,8 +20,15 @@ namespace MyApp.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Download(@"https://telegram.org/dl/desktop/win64");
-            DownloadFile(@"https://github.com/pbatard/rufus/releases/download/v3.21/rufus-3.21.exe");
+            string MyUrlString = MyUrl.Text.ToString();
+            if (MyUrlString.Contains(@"https://") && MyUrlString.Contains(@".exe"))
+            {
+                DownloadFile(MyUrlString);
+            }
+            else
+            {
+                loadbox.Content = "Не вірне посилання";
+            }
            
         }
 
@@ -67,8 +74,8 @@ namespace MyApp.View
             }
             else
             {
-                loadbox.Content = "File has been downloaded.";
-                MessageBox.Show("Access");
+                loadbox.Content = "Файл завантажено!";
+                MessageBox.Show("Файл успішно завантажено");
             }
         }
     }

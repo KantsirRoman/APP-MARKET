@@ -48,7 +48,7 @@
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="Реєстрація" Foreground="#3AB19B" Style="{StaticResource TitleText}" />
 
-                <Label Content="І'мя" Width="340" Height="25"/>
+                <Label Content="Ім'я" Width="340" Height="25"/>
                 <TextBox  x:Name="TextNameR"  Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />
                 <Label Content="Пошта" Width="340" Height="25"/>
                 <TextBox  x:Name="TextEmail" Style="{DynamicResource MyTextBox}" Width="340" Height="30" Margin="5" />

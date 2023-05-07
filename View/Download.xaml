@@ -10,27 +10,26 @@
 
     <Grid Background="#f1f3f5">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        
-        <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" >
-            <StackPanel>
-            <Button Height="25" Width="120" Content="⬇️⬇️⬇⬇" Click="Button_Click"></Button>
-             <TextBlock Text="Download File" FontSize="25" Padding="2"></TextBlock>
-                <Label x:Name="loadbox" FontSize="12" HorizontalAlignment="Center" Width="150" ></Label>
-                <ProgressBar x:Name="PrBar" Height="20"></ProgressBar>
-                
-            </StackPanel>
-        </Viewbox>
-        
-        
-        
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="208" Width="354">
+            <TextBlock Text="Вставити посилання .exe" FontSize="25" Padding="2"/>
+            <TextBox x:Name ="MyUrl" Style ="{DynamicResource MyTextBox}"/>
+            <TextBlock Text="Download File" FontSize="25" Padding="2" TextAlignment="Center" Margin="0,20,0,0"/>
+            <Label x:Name="loadbox" FontSize="12" HorizontalAlignment="Center" Width="170" Height="25" HorizontalContentAlignment="Center" />
+            <ProgressBar x:Name="PrBar" Height="20"/>
+            <Button Height="25" Width="150" Content="Завантажити" Click="Button_Click" Margin="0,15,0,0"/>
+
+        </StackPanel>
+
     </Grid>
 </Page>
