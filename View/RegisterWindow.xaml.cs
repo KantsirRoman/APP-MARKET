@@ -53,12 +53,12 @@ namespace MyApp.View
                             break;
                         case 1:
                             {
-                                statusTextR.Content = "Аккаунт створено";
+                                statusTextR.Content = "Акаунт створено";
                             }
                             break;
                         case 2:
                             {
-                                statusTextR.Content = "Аккаунт вже існує";
+                                statusTextR.Content = "Акаунт вже існує";
                             }
                             break;
 

@@ -23,7 +23,7 @@
     
     <Style x:Key="Text30" TargetType="TextBlock">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Margin" Value="2,0,2,0"/>
+       
     </Style>
 
     <Style TargetType="Viewbox">

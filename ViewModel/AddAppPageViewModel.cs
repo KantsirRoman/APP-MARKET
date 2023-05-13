@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace MyApp.ViewModel
 {
-    public class AddAppPageViewModel : INotifyPropertyChanged
+    public class AddAppPageViewModel : ViewModelBase
     {
         
         public AppModel application { get; set; }
@@ -14,15 +14,6 @@ namespace MyApp.ViewModel
         public AddAppPageViewModel()
         {
             application = new AppModel();
-        }
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 

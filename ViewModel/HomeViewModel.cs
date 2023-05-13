@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.ViewModel
 {
-    public class HomeViewModel : INotifyPropertyChanged
+    public class HomeViewModel : ViewModelBase
     {
        /* private string name;
         private string company;
@@ -74,12 +74,12 @@ namespace MyApp.ViewModel
         }
 */
 
-        public event PropertyChangedEventHandler PropertyChanged;
+       /* public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        }*/
     }
 
 
