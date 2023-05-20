@@ -21,6 +21,7 @@ namespace MyApp.UserComponent
             Text4 = str4;
             ImageSource = img;
         }
+
     }
 
 }

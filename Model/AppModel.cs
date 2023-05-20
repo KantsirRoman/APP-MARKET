@@ -70,7 +70,7 @@ namespace MyApp.Model
             get { return UrlExe; }
             set
             {
-                About = value;
+                UrlExe = value;
                 OnPropertyChanged("urlexe");
             }
 

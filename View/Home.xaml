@@ -39,14 +39,12 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="30"/>
                                     <RowDefinition Height="25"/>
-                                    <RowDefinition Height="25"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
                                 <Label Grid.Row="0" Content="{Binding Path=name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <Label Grid.Row="1" Content="{Binding  Path=company}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                                <Label Grid.Row="3" Content="{Binding  Path=urlexe}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             </Grid>
                         </Grid>
                     </Border>

@@ -24,7 +24,7 @@ namespace MyApp.Repositories
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-                    string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image,UrlExe) VALUES (NULL,@Name,@Company,@About, @Image,@UrlExe)";
+                    string sql = "INSERT INTO AllApp (Id, Name,Company, About, UrlExe, Image) VALUES (NULL,@Name,@Company,@About, @UrlExe, @Image)";
 
                     using (var command = new MySqlCommand(sql, connection))
                     {
@@ -32,8 +32,8 @@ namespace MyApp.Repositories
                         command.Parameters.AddWithValue("@Name", app.Name);
                         command.Parameters.AddWithValue("@Company", app.Company);
                         command.Parameters.AddWithValue("@About", app.About);
+                        command.Parameters.AddWithValue("@UrlExe", app.UrlExe);
                         command.Parameters.AddWithValue("@Image", app.Image); // byteArray - массив байтов изображения
-                        command.Parameters.AddWithValue("@About", app.UrlExe);
 
                         // выполнение запроса
                         command.ExecuteNonQuery();

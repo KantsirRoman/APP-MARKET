@@ -99,7 +99,7 @@ namespace MyApp.View
                 string Name = nameInput.Text.ToString();
                 string Company = companyInput.Text.ToString();
                 string About = aboutInput.Text.ToString();
-                string Addres = addres.Text.ToString();
+                string Addres = urlExeInput.Text.ToString();
 
                 if (Name != string.Empty && Company != string.Empty && About != string.Empty && Addres != string.Empty)
                 {

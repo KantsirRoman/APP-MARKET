@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace MyApp.UserComponent
 {
@@ -14,13 +16,23 @@ namespace MyApp.UserComponent
             // Встановлюємо значення в моделі даних
             var vm = new MyViewModel(str1, str2, str3, img, str4);
             
-
-
             // Прив'язуємо модель даних до вікна
             this.DataContext = vm;
         }
+    private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        var textBlock = sender as TextBlock;
+        if (textBlock != null)
+        {
+            Clipboard.SetText(textBlock.Text);
+        }
     }
     }
+    
+
+    
+    
+}
     /*public class CustomDialogViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
