@@ -99,10 +99,11 @@ namespace MyApp.View
                 string Name = nameInput.Text.ToString();
                 string Company = companyInput.Text.ToString();
                 string About = aboutInput.Text.ToString();
+                string Addres = addres.Text.ToString();
 
-                if (Name != string.Empty && Company != string.Empty && About != string.Empty)
+                if (Name != string.Empty && Company != string.Empty && About != string.Empty && Addres != string.Empty)
                 {
-                    AppModel newApp = new AppModel(Name, Company, About, byteArray);
+                    AppModel newApp = new AppModel(Name, Company, About, byteArray, Addres);
                     IAppRepository UpPh = new AppRepository();
                     UpPh.SetUploadApp(newApp);
                     MessageBox.Show("Додано");
@@ -114,9 +115,6 @@ namespace MyApp.View
               }
         }
 
-        private void Block_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
-        {
-
-        }
+       
     }
 }

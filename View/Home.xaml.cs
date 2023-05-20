@@ -25,7 +25,7 @@ namespace MyApp.View
             AppModel p = (AppModel)appList.SelectedItem;
             //MessageBox.Show(p.Name);
             //MessageBox.Show(p.Name + Environment.NewLine + p.company + Environment.NewLine + p.about);
-            CustomDialog dialog = new CustomDialog(p.Name, p.company, p.about, p.image);
+            CustomDialog dialog = new CustomDialog(p.Name, p.company, p.about, p.image, p.urlexe);
             dialog.ShowDialog();
             /*UserDialog dialog = new UserDialog();
             dialog.DataContext = new { Message1 = "First message", Message2 = "Second message", Message3 = "Third message" };

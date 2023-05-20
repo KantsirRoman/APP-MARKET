@@ -17,16 +17,18 @@ namespace MyApp.Model
         public string Company;
         public string About;
         public byte[] Image;
+        public string UrlExe;
         public AppModel()
         {
         }
 
-        public AppModel(string Name, string Company, string About, byte[] Image)
+        public AppModel(string Name, string Company, string About, byte[] Image,string UrlExe)
         {
             this.Name = Name;
             this.Company = Company;
             this.About = About;
             this.Image = Image;
+            this.UrlExe = UrlExe;
 
         }
 
@@ -59,6 +61,17 @@ namespace MyApp.Model
             {
                 About = value;
                 OnPropertyChanged("about");
+            }
+
+        }
+        
+        public string urlexe
+        {
+            get { return UrlExe; }
+            set
+            {
+                About = value;
+                OnPropertyChanged("urlexe");
             }
 
         }

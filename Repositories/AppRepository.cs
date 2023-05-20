@@ -24,7 +24,7 @@ namespace MyApp.Repositories
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-                    string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image) VALUES (NULL,@Name,@Company,@About, @Image)";
+                    string sql = "INSERT INTO AllApp (Id, Name,Company, About, Image,UrlExe) VALUES (NULL,@Name,@Company,@About, @Image,@UrlExe)";
 
                     using (var command = new MySqlCommand(sql, connection))
                     {
@@ -33,6 +33,7 @@ namespace MyApp.Repositories
                         command.Parameters.AddWithValue("@Company", app.Company);
                         command.Parameters.AddWithValue("@About", app.About);
                         command.Parameters.AddWithValue("@Image", app.Image); // byteArray - массив байтов изображения
+                        command.Parameters.AddWithValue("@About", app.UrlExe);
 
                         // выполнение запроса
                         command.ExecuteNonQuery();
@@ -66,7 +67,7 @@ namespace MyApp.Repositories
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-                    string sql = "SELECT Id, Name,Company, About, Image FROM AllApp";
+                    string sql = "SELECT Id, Name,Company, About, UrlExe, Image FROM AllApp";
 
                     using (var command = new MySqlCommand(sql, connection))
                     {
@@ -78,11 +79,12 @@ namespace MyApp.Repositories
                                 string name = reader.GetString(1);
                                 string company = reader.GetString(2);
                                 string about = reader.GetString(3);
-                                byte[] imageBytes = new byte[reader.GetBytes(4, 0, null, 0, int.MaxValue)];
-                                reader.GetBytes(4, 0, imageBytes, 0, imageBytes.Length);
+                                string urlexe = reader.GetString(4);
+                                byte[] imageBytes = new byte[reader.GetBytes(5, 0, null, 0, int.MaxValue)];
+                                reader.GetBytes(5, 0, imageBytes, 0, imageBytes.Length);
 
 
-                                AppModel retApp = new AppModel { Id = id, Name = name, Company = company, About = about, Image = imageBytes };
+                                AppModel retApp = new AppModel { Id = id, Name = name, Company = company, About = about, Image = imageBytes, UrlExe = urlexe, };
                                 myDataList.Add(retApp);
 
                             }

@@ -14,6 +14,7 @@ namespace MyApp.Repositories
         public RepositoryBase()
         {
             _connectionString = @"server=localhost;user=root;password=;database=MyApp";
+            //_connectionString = @"server=localhost;user=root;password=;database=MyApp";
         }
 
         protected MySqlConnection GetConnection()

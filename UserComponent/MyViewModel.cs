@@ -12,11 +12,13 @@ namespace MyApp.UserComponent
         public string Text1 { get; set; }
         public string Text2 { get; set; }
         public string Text3 { get; set; }
+        public string Text4 { get; set; }
 
-        public MyViewModel(string str1, string str2 ,string str3, byte[] img) {
+        public MyViewModel(string str1, string str2 ,string str3, byte[] img, string str4) {
             Text1 = str1;
             Text2 = str2;
             Text3 = str3;
+            Text4 = str4;
             ImageSource = img;
         }
     }

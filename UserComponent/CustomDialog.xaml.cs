@@ -7,12 +7,12 @@ namespace MyApp.UserComponent
     /// </summary>
     public partial class CustomDialog : Window
     {
-        public CustomDialog(string str1, string str2, string str3, byte[] img)
+        public CustomDialog(string str1, string str2, string str3, byte[] img, string str4)
         {
             InitializeComponent();
 
             // Встановлюємо значення в моделі даних
-            var vm = new MyViewModel(str1, str2, str3, img);
+            var vm = new MyViewModel(str1, str2, str3, img, str4);
             
 
 

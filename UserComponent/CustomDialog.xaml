@@ -20,6 +20,7 @@
             <TextBlock Text="{Binding Text1}" TextWrapping="Wrap" Style="{StaticResource Text30}"/>
             <TextBlock Text="{Binding Text2}" TextWrapping="Wrap"/>
             <TextBlock Text="{Binding Text3}" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Text4}" TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </Window>

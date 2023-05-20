@@ -24,7 +24,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
 
-                    <Border Height="90" Width="260" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#dadfe4">
+                    <Border Height="100" Width="260" BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="#dadfe4">
                         <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="90"/>
@@ -39,12 +39,14 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="30"/>
                                     <RowDefinition Height="25"/>
+                                    <RowDefinition Height="25"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
                                 <Label Grid.Row="0" Content="{Binding Path=name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <Label Grid.Row="1" Content="{Binding  Path=company}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <Label Grid.Row="2" Content="{Binding  Path=about}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <Label Grid.Row="3" Content="{Binding  Path=urlexe}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             </Grid>
                         </Grid>
                     </Border>
